@@ -18,7 +18,7 @@ const translations = {
     translateTitle:'История, започнала с превод', translateFinal:'Различни езици, едно сърце.',
     galleryKicker:'Белезите на бялата гюл', galleryTitle:'Нашата галерия', gallerySub:'Всички спомени в малки картички, готови да се разтворят.', all:'Всички', sofiaDays:'Софийски дни', family:'Семейство', engagement:'Годеж', us:'Ние',
     songKicker:'Мелодията ни', songTitle:'Нашата песен', songSub:'Тази песен разказва за нас', spotify:'Слушай в Spotify',
-    uploadKicker:'Дигитална кутия за спомени', uploadTitle:'Да запазим спомените', uploadSub:'Споделете снимките и видеата, които сте направили', uploadH3:'Качете вашите снимки и видеа', uploadText:'Изпратете вашите снимки и видеа. Нека спомените ни растат заедно с вас. Всеки кадър е много ценен за нас.', uploadThanksTitle:'Благодарим Ви!', uploadThanksText:'Спомените ви стигнаха до нас. Благодарим, че направихте деня ни още по-специален.', fullName:'Име и фамилия', namePh:'Напишете името си', emailOptional:'Имейл', emailPh:'по желание', shortNote:'Кратка бележка', memoryNotePh:'Оставете кратка бележка...', chooseFiles:'Изберете файлове', fileTypes:'Можете да изберете снимки и видеа; те ще се качват едно по едно.', noFile:'Няма избран файл', uploadBtn:'Качи спомените', vdsNote:'', storyCopy:'От първата среща до момента, в който казахме „да“ – всяка стъпка е част от нашата приказка.', dateLabel:'Дата', timeLabel:'Час', placeLabel:'Място',
+    uploadKicker:'Дигитална кутия за спомени', uploadTitle:'Да запазим спомените', uploadSub:'Споделете снимките и видеата, които сте направили', uploadH3:'Качете вашите снимки и видеа', uploadText:'Изпратете вашите снимки и видеа. Нека спомените ни растат заедно с вас. Всеки кадър е много ценен за нас.', uploadThanksTitle:'Благодарим Ви!', uploadThanksText:'Спомените ви стигнаха до нас. Благодарим, че направихте деня ни още по-специален.', guestPreviewKicker:'От гостите', guestPreviewTitle:'Споделени спомени', guestPreviewLink:'Виж всички', fullName:'Име и фамилия', namePh:'Напишете името си', emailOptional:'Имейл', emailPh:'по желание', shortNote:'Кратка бележка', memoryNotePh:'Оставете кратка бележка...', chooseFiles:'Изберете файлове', fileTypes:'Можете да изберете снимки и видеа; те ще се качват едно по едно.', noFile:'Няма избран файл', uploadBtn:'Качи спомените', vdsNote:'', storyCopy:'От първата среща до момента, в който казахме „да“ – всяка стъпка е част от нашата приказка.', dateLabel:'Дата', timeLabel:'Час', placeLabel:'Място',
 
     startTime:'Започва в 19:00',
     locationKicker:'Къде и кога', locationTitle:'Място на годежа', locationSub:'Ще се радваме да бъдете с нас', directions:'Упътване', programTitle:'Програма', welcome:'Посрещане', ceremony:'Годежна церемония', dinner:'Вечеря', fun:'Забавление',
@@ -35,7 +35,7 @@ const translations = {
     translateTitle:'Çeviriyle başlayan hikaye', translateFinal:'Farklı diller, tek kalp.',
     galleryKicker:'Beyaz Gül Anıları', galleryTitle:'Galerimiz', gallerySub:'Tüm anılar küçük kartlarda, üzerine tıklayınca açılır.', all:'Tümü', sofiaDays:'Sofia Günleri', family:'Aile', engagement:'Nişan', us:'Biz',
     songKicker:'Melodimiz', songTitle:'Bizim Şarkımız', songSub:'Bu şarkı bizi anlatır', spotify:"Spotify'da Dinle",
-    uploadKicker:'Dijital anı kutusu', uploadTitle:'Anılarımızı Saklayalım', uploadSub:'Çektiğiniz fotoğraf ve videoları bizimle paylaşın', uploadH3:'Fotoğraf ve Videolarınızı Yükleyin', uploadText:'Fotoğraf ve videolarınızı gönderin. Anılarımız sizinle birlikte çoğalsın. Her fotoğraf ve video bizim için çok değerli.', uploadThanksTitle:'Çok teşekkür ederiz!', uploadThanksText:'Anılarınız bize ulaştı. Bu güzel günü bizimle birlikte büyüttüğünüz için çok mutluyuz.', fullName:'Ad Soyad', namePh:'Adınızı yazın', emailOptional:'E-posta', emailPh:'isteğe bağlı', shortNote:'Kısa Not', memoryNotePh:'Kısa bir not bırakın...', chooseFiles:'Dosya seçin', fileTypes:'Fotoğraf ve video seçebilirsiniz; dosyalar sırayla yüklenecek.', noFile:'Henüz dosya seçilmedi', uploadBtn:'Anıları Yükle', vdsNote:'', storyCopy:'İlk buluşmadan “evet”e kadar her an bizim hikayemizin bir parçası.', dateLabel:'Tarih', timeLabel:'Saat', placeLabel:'Yer',
+    uploadKicker:'Dijital anı kutusu', uploadTitle:'Anılarımızı Saklayalım', uploadSub:'Çektiğiniz fotoğraf ve videoları bizimle paylaşın', uploadH3:'Fotoğraf ve Videolarınızı Yükleyin', uploadText:'Fotoğraf ve videolarınızı gönderin. Anılarımız sizinle birlikte çoğalsın. Her fotoğraf ve video bizim için çok değerli.', uploadThanksTitle:'Çok teşekkür ederiz!', uploadThanksText:'Anılarınız bize ulaştı. Bu güzel günü bizimle birlikte büyüttüğünüz için çok mutluyuz.', guestPreviewKicker:'Sizden gelenler', guestPreviewTitle:'Paylaşılan Anılar', guestPreviewLink:'Tümünü Gör', fullName:'Ad Soyad', namePh:'Adınızı yazın', emailOptional:'E-posta', emailPh:'isteğe bağlı', shortNote:'Kısa Not', memoryNotePh:'Kısa bir not bırakın...', chooseFiles:'Dosya seçin', fileTypes:'Fotoğraf ve video seçebilirsiniz; dosyalar sırayla yüklenecek.', noFile:'Henüz dosya seçilmedi', uploadBtn:'Anıları Yükle', vdsNote:'', storyCopy:'İlk buluşmadan “evet”e kadar her an bizim hikayemizin bir parçası.', dateLabel:'Tarih', timeLabel:'Saat', placeLabel:'Yer',
 
     startTime:'19:00' ,
     locationKicker:'Nerede ve ne zaman', locationTitle:'Nişan Yeri', locationSub:'Sizleri de aramızda görmekten mutluluk duyarız', directions:'Yol Tarifi Al', programTitle:'Tören Programı', welcome:'Karşılama', ceremony:'Nişan Töreni', dinner:'Yemek', fun:'Eğlence',
@@ -52,7 +52,7 @@ const translations = {
     translateTitle:'A story that started with translation', translateFinal:'Different languages, one heart.',
     galleryKicker:'White Rose Memories', galleryTitle:'Our Gallery', gallerySub:'All memories in small cards, ready to open.', all:'All', sofiaDays:'Sofia Days', family:'Family', engagement:'Engagement', us:'Us',
     songKicker:'Our melody', songTitle:'Our Song', songSub:'This song tells our story', spotify:'Listen on Spotify',
-    uploadKicker:'Digital memory box', uploadTitle:'Let’s Keep Our Memories', uploadSub:'Share the photos and videos you took with us', uploadH3:'Upload Your Photos and Videos', uploadText:'Send us your photos and videos. Let our memories grow together with you. Every photo and video is very precious to us.', uploadThanksTitle:'Thank you so much!', uploadThanksText:'Your memories reached us. Thank you for making this day even more special with us.', fullName:'Full Name', namePh:'Write your name', emailOptional:'Email', emailPh:'optional', shortNote:'Short Note', memoryNotePh:'Leave a short note...', chooseFiles:'Choose files', fileTypes:'Choose photos and videos; files will upload one by one.', noFile:'No file selected', uploadBtn:'Upload Memories', vdsNote:'', storyCopy:'From the first date to “yes”, every moment is part of our story.', dateLabel:'Date', timeLabel:'Time', placeLabel:'Place',
+    uploadKicker:'Digital memory box', uploadTitle:'Let’s Keep Our Memories', uploadSub:'Share the photos and videos you took with us', uploadH3:'Upload Your Photos and Videos', uploadText:'Send us your photos and videos. Let our memories grow together with you. Every photo and video is very precious to us.', uploadThanksTitle:'Thank you so much!', uploadThanksText:'Your memories reached us. Thank you for making this day even more special with us.', guestPreviewKicker:'From guests', guestPreviewTitle:'Shared Memories', guestPreviewLink:'See All', fullName:'Full Name', namePh:'Write your name', emailOptional:'Email', emailPh:'optional', shortNote:'Short Note', memoryNotePh:'Leave a short note...', chooseFiles:'Choose files', fileTypes:'Choose photos and videos; files will upload one by one.', noFile:'No file selected', uploadBtn:'Upload Memories', vdsNote:'', storyCopy:'From the first date to “yes”, every moment is part of our story.', dateLabel:'Date', timeLabel:'Time', placeLabel:'Place',
 
     startTime:'Starts at 19:00',
     locationKicker:'Where and when', locationTitle:'Engagement Location', locationSub:'We would be happy to see you with us', directions:'Get Directions', programTitle:'Ceremony Program', welcome:'Welcome', ceremony:'Engagement Ceremony', dinner:'Dinner', fun:'Celebration',
@@ -509,6 +509,7 @@ function initUpload(){
         selectedMemoryFiles = [];
         updateFileCount();
         thanks?.classList.add('show');
+        initGuestMemoryPreview();
       }else{
         selectedMemoryFiles = failedFiles;
         syncMemoryInput(input);
@@ -535,7 +536,33 @@ function initUpload(){
     selectedMemoryFiles = [];
     updateFileCount();
     thanks?.classList.add('show');
+    initGuestMemoryPreview();
   });
+}
+
+async function initGuestMemoryPreview(){
+  const preview = $('#guestMemoryPreview');
+  const grid = $('#guestPreviewGrid');
+  if(!preview || !grid) return;
+
+  try{
+    const response = await fetch('/api/public-memories', {headers:{'Accept':'application/json'}});
+    if(!response.ok) return;
+    const payload = await response.json();
+    const items = Array.isArray(payload.items) ? payload.items.slice(0, 8) : [];
+    if(!items.length) return;
+
+    grid.innerHTML = items.map(item => {
+      const url = String(item.url || '');
+      if(item.type === 'video'){
+        return `<a class="guest-preview-card" href="/sizden-gelenler"><video src="${url}" preload="metadata" muted playsinline></video><span>▶</span></a>`;
+      }
+      return `<a class="guest-preview-card" href="/sizden-gelenler"><img src="${url}" alt="" loading="lazy" decoding="async"><span>✦</span></a>`;
+    }).join('');
+    preview.hidden = false;
+  }catch(err){
+    preview.hidden = true;
+  }
 }
 
 function uploadWithProgress(data, onProgress){
@@ -729,6 +756,7 @@ initPetals();
 initFlowerShower();
 initGallery();
 initUpload();
+initGuestMemoryPreview();
 initForms();
 initQr();
 initAudio();

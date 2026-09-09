@@ -881,6 +881,26 @@ def health_check():
     )
 
 
+@app.route("/api/public-memories")
+def public_memories_api():
+    items = public_memory_items()
+    return jsonify(
+        {
+            "success": True,
+            "count": len(items),
+            "items": [
+                {
+                    "guest": item["guest"],
+                    "type": item["type"],
+                    "url": url_for("public_upload_file", filename=item["relative_path"]),
+                    "updated_at": item["updated_at"],
+                }
+                for item in items[:12]
+            ],
+        }
+    )
+
+
 @app.route("/sizden-gelenler")
 def public_memories():
     items = public_memory_items()
