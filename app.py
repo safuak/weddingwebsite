@@ -954,7 +954,6 @@ def public_memories():
             <nav class="nav" aria-label="Navigation">
               <a href="/" data-i18n="navInvite">Покана</a>
               <a href="/?share=memories" data-i18n="navShare">Сподели спомени</a>
-              <a href="/admin" data-i18n="navAdmin">Админ</a>
             </nav>
             <div class="actions">
               <div class="lang-switch" aria-label="Language selector">
@@ -1013,9 +1012,9 @@ def public_memories():
 
           <script>
             const translations = {
-              bg:{navInvite:'Покана',navShare:'Сподели спомени',navAdmin:'Админ',kicker:'От вас',heroTitle:'Споделени спомени',heroText:'Снимките и видеата, които ни изпратихте, се събират тук като малък албум от нашия ден.',countLabel:'спомена',galleryKicker:'Галерия',galleryTitle:'Нашите гости',galleryText:'Благодарим ви, че споделихте тези красиви моменти с нас.',empty:'Все още няма споделени спомени.'},
-              tr:{navInvite:'Davetiye',navShare:'Anı Paylaş',navAdmin:'Admin',kicker:'Sizden gelenler',heroTitle:'Paylaşılan Anılar',heroText:'Bize gönderdiğiniz fotoğraf ve videolar burada küçük bir anı albümü gibi toplanıyor.',countLabel:'anı',galleryKicker:'Galeri',galleryTitle:'Sizden Gelenler',galleryText:'Bu güzel anları bizimle paylaştığınız için çok teşekkür ederiz.',empty:'Henüz paylaşılan anı yok.'},
-              en:{navInvite:'Invitation',navShare:'Share Memories',navAdmin:'Admin',kicker:'From you',heroTitle:'Shared Memories',heroText:'The photos and videos you sent us gather here as a small album from our day.',countLabel:'memories',galleryKicker:'Gallery',galleryTitle:'From Our Guests',galleryText:'Thank you for sharing these beautiful moments with us.',empty:'No shared memories yet.'}
+              bg:{navInvite:'Покана',navShare:'Сподели спомени',kicker:'От вас',heroTitle:'Споделени спомени',heroText:'Снимките и видеата, които ни изпратихте, се събират тук като малък албум от нашия ден.',countLabel:'спомена',galleryKicker:'Галерия',galleryTitle:'Нашите гости',galleryText:'Благодарим ви, че споделихте тези красиви моменти с нас.',empty:'Все още няма споделени спомени.'},
+              tr:{navInvite:'Davetiye',navShare:'Anı Paylaş',kicker:'Sizden gelenler',heroTitle:'Paylaşılan Anılar',heroText:'Bize gönderdiğiniz fotoğraf ve videolar burada küçük bir anı albümü gibi toplanıyor.',countLabel:'anı',galleryKicker:'Galeri',galleryTitle:'Sizden Gelenler',galleryText:'Bu güzel anları bizimle paylaştığınız için çok teşekkür ederiz.',empty:'Henüz paylaşılan anı yok.'},
+              en:{navInvite:'Invitation',navShare:'Share Memories',kicker:'From you',heroTitle:'Shared Memories',heroText:'The photos and videos you sent us gather here as a small album from our day.',countLabel:'memories',galleryKicker:'Gallery',galleryTitle:'From Our Guests',galleryText:'Thank you for sharing these beautiful moments with us.',empty:'No shared memories yet.'}
             };
             let currentLang = localStorage.getItem('siteLang') || 'bg';
             const $ = (selector, root = document) => root.querySelector(selector);

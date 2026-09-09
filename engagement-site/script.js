@@ -10,8 +10,8 @@ if (location.search && /(?:guestName|memories|name|guests|status|note)=/.test(lo
 const translations = {
   bg: {
     gateSmall:'Покана за годеж', gateText:'Ще се радваме да бъдете с нас в този специален ден.', openInvite:'Продължи',
-    navHome:'Начало', navStory:'История', navGallery:'Галерия', navSong:'Песен', navLocation:'Място', navRsvp:'Потвърдете', navUpload:'Спомени',
-    navHomeShort:'Начало', navStoryShort:'История', navGalleryShort:'Галерия', navUploadShort:'Спомени', navRsvpShort:'RSVP',
+    navHome:'Начало', navStory:'История', navGallery:'Галерия', navGuestGallery:'От гостите', navSong:'Песен', navLocation:'Място', navRsvp:'Потвърдете', navUpload:'Спомени',
+    navHomeShort:'Начало', navStoryShort:'История', navGalleryShort:'Галерия', navGuestGalleryShort:'Гости', navUploadShort:'Спомени', navRsvpShort:'RSVP',
     heroEyebrow:'Добре дошли', heroSub:'Годеж', heroInviteLine:'Имаме удоволствието да Ви поканим на нашия годеж', days:'дни', hours:'часа', minutes:'мин', seconds:'сек', reminderBtn:'Напомни ми', rsvpBtn:'Потвърди присъствие', inviteBtn:'Виж поканата',
     storyKicker:'Нашата малка история', storyTitle:'Нашата история', storySub:'Всяка любов започва с история',
     s1t:'Запознахме се', s1p:'Запознахме се в Non Stop.', s2t:'Говорихме с превод', s2p:'Не говорехме един език, но сърцата ни се разбраха.', s3t:'Първа среща', s3p:'Незабравим ден по улиците на София.', s4t:'Първа целувка', s4p:'В този момент всичко се промени.', s5t:'Годеж', s5p:'И сега казваме „да“ завинаги.',
@@ -27,8 +27,8 @@ const translations = {
   },
   tr: {
     gateSmall:'Nişan Davetiyesi', gateText:'Bu özel günümüzde sizi de aramızda görmekten mutluluk duyarız.', openInvite:'Devam Et',
-    navHome:'Ana Sayfa', navStory:'Hikayemiz', navGallery:'Galeri', navSong:'Şarkımız', navLocation:'Nişan Yeri', navRsvp:'Katılım', navUpload:'Anılar',
-    navHomeShort:'Ana', navStoryShort:'Hikaye', navGalleryShort:'Galeri', navUploadShort:'Anılar', navRsvpShort:'RSVP',
+    navHome:'Ana Sayfa', navStory:'Hikayemiz', navGallery:'Galeri', navGuestGallery:'Sizden Gelenler', navSong:'Şarkımız', navLocation:'Nişan Yeri', navRsvp:'Katılım', navUpload:'Anılar',
+    navHomeShort:'Ana', navStoryShort:'Hikaye', navGalleryShort:'Galeri', navGuestGalleryShort:'Gelenler', navUploadShort:'Anılar', navRsvpShort:'RSVP',
     heroEyebrow:'Hoş geldiniz', heroSub:'Nişanlanıyoruz', heroInviteLine:'Bu mutlu günümüzü sizinle paylaşmak istiyoruz', days:'gün', hours:'saat', minutes:'dk', seconds:'sn', reminderBtn:'Hatırlatıcı Al', rsvpBtn:'Katılım Bildir', inviteBtn:'Davetiyeyi Gör',
     storyKicker:'Küçük hikayemiz', storyTitle:'Hikayemiz', storySub:'Her aşk bir hikayeyle başlar',
     s1t:'Tanıştık', s1p:"Non Stop'ta tanıştık.", s2t:'Çeviriyle Konuştuk', s2p:'Aynı dili konuşmasak da kalplerimiz anlaştı.', s3t:'İlk Buluşma', s3p:'Sofia sokaklarında unutulmaz bir gün.', s4t:'İlk Öpücük', s4p:'O an, her şey değişti.', s5t:'Nişan', s5p:'Ve şimdi sonsuza “evet” diyoruz.',
@@ -44,8 +44,8 @@ const translations = {
   },
   en: {
     gateSmall:'Engagement Invitation', gateText:'We would be happy to have you with us on this special day.', openInvite:'Continue',
-    navHome:'Home', navStory:'Story', navGallery:'Gallery', navSong:'Song', navLocation:'Location', navRsvp:'RSVP', navUpload:'Memories',
-    navHomeShort:'Home', navStoryShort:'Story', navGalleryShort:'Gallery', navUploadShort:'Memories', navRsvpShort:'RSVP',
+    navHome:'Home', navStory:'Story', navGallery:'Gallery', navGuestGallery:'From Guests', navSong:'Song', navLocation:'Location', navRsvp:'RSVP', navUpload:'Memories',
+    navHomeShort:'Home', navStoryShort:'Story', navGalleryShort:'Gallery', navGuestGalleryShort:'Guests', navUploadShort:'Memories', navRsvpShort:'RSVP',
     heroEyebrow:'Welcome', heroSub:"We're getting engaged", heroInviteLine:'We would love to share this happy day with you', days:'days', hours:'hours', minutes:'min', seconds:'sec', reminderBtn:'Get Reminder', rsvpBtn:'RSVP', inviteBtn:'See Invitation',
     storyKicker:'Our little story', storyTitle:'Our Story', storySub:'Every love begins with a story',
     s1t:'We Met', s1p:'We met at Non Stop.', s2t:'We Talked with Translation', s2p:'We did not speak the same language, but our hearts understood.', s3t:'First Date', s3p:'An unforgettable day in the streets of Sofia.', s4t:'First Kiss', s4p:'In that moment, everything changed.', s5t:'Engagement', s5p:'And now, we say “yes” forever.',
