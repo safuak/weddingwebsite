@@ -18,12 +18,12 @@ const translations = {
     translateTitle:'История, започнала с превод', translateFinal:'Различни езици, едно сърце.',
     galleryKicker:'Белезите на бялата гюл', galleryTitle:'Нашата галерия', gallerySub:'Всички спомени в малки картички, готови да се разтворят.', all:'Всички', sofiaDays:'Софийски дни', family:'Семейство', engagement:'Годеж', us:'Ние',
     songKicker:'Мелодията ни', songTitle:'Нашата песен', songSub:'Тази песен разказва за нас', spotify:'Слушай в Spotify',
-    uploadKicker:'Дигитална кутия за спомени', uploadTitle:'Да запазим спомените', uploadSub:'Споделете снимките и видеата, които сте направили', uploadH3:'Качете вашите снимки и видеа', uploadText:'Изпратете вашите снимки и видеа. Нека спомените ни растат заедно с вас. Всеки кадър е много ценен за нас.', fullName:'Име и фамилия', namePh:'Напишете името си', emailOptional:'Имейл', emailPh:'по желание', shortNote:'Кратка бележка', memoryNotePh:'Оставете кратка бележка...', chooseFiles:'Изберете файлове', fileTypes:'Можете да изберете снимки и видеа; те ще се качват едно по едно.', noFile:'Няма избран файл', uploadBtn:'Качи спомените', vdsNote:'', storyCopy:'От първата среща до момента, в който казахме „да“ – всяка стъпка е част от нашата приказка.', dateLabel:'Дата', timeLabel:'Час', placeLabel:'Място',
+    uploadKicker:'Дигитална кутия за спомени', uploadTitle:'Да запазим спомените', uploadSub:'Споделете снимките и видеата, които сте направили', uploadH3:'Качете вашите снимки и видеа', uploadText:'Изпратете вашите снимки и видеа. Нека спомените ни растат заедно с вас. Всеки кадър е много ценен за нас.', uploadThanksTitle:'Благодарим Ви!', uploadThanksText:'Спомените ви стигнаха до нас. Благодарим, че направихте деня ни още по-специален.', fullName:'Име и фамилия', namePh:'Напишете името си', emailOptional:'Имейл', emailPh:'по желание', shortNote:'Кратка бележка', memoryNotePh:'Оставете кратка бележка...', chooseFiles:'Изберете файлове', fileTypes:'Можете да изберете снимки и видеа; те ще се качват едно по едно.', noFile:'Няма избран файл', uploadBtn:'Качи спомените', vdsNote:'', storyCopy:'От първата среща до момента, в който казахме „да“ – всяка стъпка е част от нашата приказка.', dateLabel:'Дата', timeLabel:'Час', placeLabel:'Място',
 
     startTime:'Започва в 19:00',
     locationKicker:'Къде и кога', locationTitle:'Място на годежа', locationSub:'Ще се радваме да бъдете с нас', directions:'Упътване', programTitle:'Програма', welcome:'Посрещане', ceremony:'Годежна церемония', dinner:'Вечеря', fun:'Забавление',
     rsvpKicker:'Моля, потвърдете', rsvpTitle:'Потвърждение', rsvpSub:'Моля, потвърдете дали ще присъствате', guestCount:'Колко души ще присъстват?', select:'Изберете', coming:'Ще присъствам', notComing:'Няма да присъствам', note:'Бележка', notePh:'Оставете ни кратко послание...', send:'Изпрати',
-    quote:'“Различни езици, различни пътища... Но едно сърце.”', finalTop:'С нетърпение очакваме да споделим този', finalScript:'специален ден с Вас', finalThanks:'Благодарим Ви, че ще бъдете част от нашия годеж и ще споделите нашето щастие.', finalAwait:'Очакваме Ви', rsvpAlert:'Вашето потвърждение е получено. Благодарим ви ❤️', uploadAlert:'Файловете са качени успешно.', uploadDone:'Успешно изпратено', uploadFailed:'Качването не бе успешно.', uploadConnection:'Грешка при връзката за качване.', uploadResponse:'Грешка в отговора при качване.', invalidFile:'Невалиден тип файл.', fileTooLarge:'Файлът е твърде голям.', rsvpError:'Грешка при изпращане.', fileSelected:'избрани', retryUpload:'Качи отново', linkCopied:'Линкът е копиран', calendarDownloaded:'Календарният файл е изтеглен', audioOn:'Спри звука', audioOff:'Пусни звука', audioToggleLabel:'Музика', qrKicker:'Маса за спомени', qrText:'Можете да отворите поканата или да споделите снимките и видеата си с нас.', qrInvite:'Към поканата', qrMemories:'Сподели спомени'
+    quote:'“Различни езици, различни пътища... Но едно сърце.”', finalTop:'С нетърпение очакваме да споделим този', finalScript:'специален ден с Вас', finalThanks:'Благодарим Ви, че ще бъдете част от нашия годеж и ще споделите нашето щастие.', finalAwait:'Очакваме Ви', rsvpAlert:'Вашето потвърждение е получено. Благодарим ви ❤️', uploadAlert:'Файловете са качени успешно.', uploadDone:'Успешно изпратено', uploadFailed:'Качването не бе успешно.', uploadConnection:'Грешка при връзката за качване.', uploadResponse:'Грешка в отговора при качване.', invalidFile:'Невалиден тип файл.', fileTooLarge:'Файлът е твърде голям.', rsvpError:'Грешка при изпращане.', fileSelected:'избрани', retryUpload:'Качи отново', linkCopied:'Линкът е копиран', calendarDownloaded:'Календарният файл е изтеглен', audioOn:'Спри звука', audioOff:'Пусни звука', audioToggleLabel:'Музика', qrKicker:'Маса за спомени', qrText:'Изберете как искате да продължите.', qrInvite:'Към поканата', qrMemories:'Сподели спомени'
   },
   tr: {
     gateSmall:'Nişan Davetiyesi', gateText:'Bu özel günümüzde sizi de aramızda görmekten mutluluk duyarız.', openInvite:'Devam Et',
@@ -35,12 +35,12 @@ const translations = {
     translateTitle:'Çeviriyle başlayan hikaye', translateFinal:'Farklı diller, tek kalp.',
     galleryKicker:'Beyaz Gül Anıları', galleryTitle:'Galerimiz', gallerySub:'Tüm anılar küçük kartlarda, üzerine tıklayınca açılır.', all:'Tümü', sofiaDays:'Sofia Günleri', family:'Aile', engagement:'Nişan', us:'Biz',
     songKicker:'Melodimiz', songTitle:'Bizim Şarkımız', songSub:'Bu şarkı bizi anlatır', spotify:"Spotify'da Dinle",
-    uploadKicker:'Dijital anı kutusu', uploadTitle:'Anılarımızı Saklayalım', uploadSub:'Çektiğiniz fotoğraf ve videoları bizimle paylaşın', uploadH3:'Fotoğraf ve Videolarınızı Yükleyin', uploadText:'Fotoğraf ve videolarınızı gönderin. Anılarımız sizinle birlikte çoğalsın. Her fotoğraf ve video bizim için çok değerli.', fullName:'Ad Soyad', namePh:'Adınızı yazın', emailOptional:'E-posta', emailPh:'isteğe bağlı', shortNote:'Kısa Not', memoryNotePh:'Kısa bir not bırakın...', chooseFiles:'Dosya seçin', fileTypes:'Fotoğraf ve video seçebilirsiniz; dosyalar sırayla yüklenecek.', noFile:'Henüz dosya seçilmedi', uploadBtn:'Anıları Yükle', vdsNote:'', storyCopy:'İlk buluşmadan “evet”e kadar her an bizim hikayemizin bir parçası.', dateLabel:'Tarih', timeLabel:'Saat', placeLabel:'Yer',
+    uploadKicker:'Dijital anı kutusu', uploadTitle:'Anılarımızı Saklayalım', uploadSub:'Çektiğiniz fotoğraf ve videoları bizimle paylaşın', uploadH3:'Fotoğraf ve Videolarınızı Yükleyin', uploadText:'Fotoğraf ve videolarınızı gönderin. Anılarımız sizinle birlikte çoğalsın. Her fotoğraf ve video bizim için çok değerli.', uploadThanksTitle:'Çok teşekkür ederiz!', uploadThanksText:'Anılarınız bize ulaştı. Bu güzel günü bizimle birlikte büyüttüğünüz için çok mutluyuz.', fullName:'Ad Soyad', namePh:'Adınızı yazın', emailOptional:'E-posta', emailPh:'isteğe bağlı', shortNote:'Kısa Not', memoryNotePh:'Kısa bir not bırakın...', chooseFiles:'Dosya seçin', fileTypes:'Fotoğraf ve video seçebilirsiniz; dosyalar sırayla yüklenecek.', noFile:'Henüz dosya seçilmedi', uploadBtn:'Anıları Yükle', vdsNote:'', storyCopy:'İlk buluşmadan “evet”e kadar her an bizim hikayemizin bir parçası.', dateLabel:'Tarih', timeLabel:'Saat', placeLabel:'Yer',
 
     startTime:'19:00' ,
     locationKicker:'Nerede ve ne zaman', locationTitle:'Nişan Yeri', locationSub:'Sizleri de aramızda görmekten mutluluk duyarız', directions:'Yol Tarifi Al', programTitle:'Tören Programı', welcome:'Karşılama', ceremony:'Nişan Töreni', dinner:'Yemek', fun:'Eğlence',
     rsvpKicker:'Lütfen bildiriniz', rsvpTitle:'Katılım Durumu', rsvpSub:'Lütfen katılım durumunuzu bildirin', guestCount:'Kaç kişi katılacaksınız?', select:'Seçiniz', coming:'Geliyorum', notComing:'Gelemiyorum', note:'Not', notePh:'Bizim için bir not bırakın...', send:'Gönder',
-    quote:'“Farklı diller, farklı yollar... Ama aynı kalp.”', finalTop:'Bu özel günü sizinle paylaşmayı sabırsızlıkla bekliyoruz', finalScript:'en mutlu günümüzde', finalThanks:'Nişanımızın bir parçası olup mutluluğumuzu paylaşacağınız için teşekkür ederiz.', finalAwait:'Sizi bekliyoruz', rsvpAlert:'Katılım bilginiz alındı. Teşekkür ederiz ❤️', uploadAlert:'Dosyalar başarıyla yüklendi.', uploadDone:'Başarıyla gönderildi', uploadFailed:'Yükleme başarısız oldu.', uploadConnection:'Yükleme bağlantı hatası.', uploadResponse:'Yükleme yanıtı okunamadı.', invalidFile:'Geçersiz dosya türü.', fileTooLarge:'Dosya çok büyük.', rsvpError:'Gönderim hatası.', fileSelected:'dosya seçildi', retryUpload:'Yeniden yükle', linkCopied:'Link kopyalandı', calendarDownloaded:'Takvim dosyası indirildi', audioOn:'Sesi kapat', audioOff:'Sesi aç', audioToggleLabel:'Müzik', qrKicker:'Anı Masası', qrText:'Davetiyeyi açabilir ya da fotoğraf ve videolarınızı bizimle paylaşabilirsiniz.', qrInvite:'Davetiyeye Git', qrMemories:'Anıları Paylaş'
+    quote:'“Farklı diller, farklı yollar... Ama aynı kalp.”', finalTop:'Bu özel günü sizinle paylaşmayı sabırsızlıkla bekliyoruz', finalScript:'en mutlu günümüzde', finalThanks:'Nişanımızın bir parçası olup mutluluğumuzu paylaşacağınız için teşekkür ederiz.', finalAwait:'Sizi bekliyoruz', rsvpAlert:'Katılım bilginiz alındı. Teşekkür ederiz ❤️', uploadAlert:'Dosyalar başarıyla yüklendi.', uploadDone:'Başarıyla gönderildi', uploadFailed:'Yükleme başarısız oldu.', uploadConnection:'Yükleme bağlantı hatası.', uploadResponse:'Yükleme yanıtı okunamadı.', invalidFile:'Geçersiz dosya türü.', fileTooLarge:'Dosya çok büyük.', rsvpError:'Gönderim hatası.', fileSelected:'dosya seçildi', retryUpload:'Yeniden yükle', linkCopied:'Link kopyalandı', calendarDownloaded:'Takvim dosyası indirildi', audioOn:'Sesi kapat', audioOff:'Sesi aç', audioToggleLabel:'Müzik', qrKicker:'Anı Masası', qrText:'Nasıl devam etmek istersiniz?', qrInvite:'Davetiyeye Git', qrMemories:'Anıları Paylaş'
   },
   en: {
     gateSmall:'Engagement Invitation', gateText:'We would be happy to have you with us on this special day.', openInvite:'Continue',
@@ -52,12 +52,12 @@ const translations = {
     translateTitle:'A story that started with translation', translateFinal:'Different languages, one heart.',
     galleryKicker:'White Rose Memories', galleryTitle:'Our Gallery', gallerySub:'All memories in small cards, ready to open.', all:'All', sofiaDays:'Sofia Days', family:'Family', engagement:'Engagement', us:'Us',
     songKicker:'Our melody', songTitle:'Our Song', songSub:'This song tells our story', spotify:'Listen on Spotify',
-    uploadKicker:'Digital memory box', uploadTitle:'Let’s Keep Our Memories', uploadSub:'Share the photos and videos you took with us', uploadH3:'Upload Your Photos and Videos', uploadText:'Send us your photos and videos. Let our memories grow together with you. Every photo and video is very precious to us.', fullName:'Full Name', namePh:'Write your name', emailOptional:'Email', emailPh:'optional', shortNote:'Short Note', memoryNotePh:'Leave a short note...', chooseFiles:'Choose files', fileTypes:'Choose photos and videos; files will upload one by one.', noFile:'No file selected', uploadBtn:'Upload Memories', vdsNote:'', storyCopy:'From the first date to “yes”, every moment is part of our story.', dateLabel:'Date', timeLabel:'Time', placeLabel:'Place',
+    uploadKicker:'Digital memory box', uploadTitle:'Let’s Keep Our Memories', uploadSub:'Share the photos and videos you took with us', uploadH3:'Upload Your Photos and Videos', uploadText:'Send us your photos and videos. Let our memories grow together with you. Every photo and video is very precious to us.', uploadThanksTitle:'Thank you so much!', uploadThanksText:'Your memories reached us. Thank you for making this day even more special with us.', fullName:'Full Name', namePh:'Write your name', emailOptional:'Email', emailPh:'optional', shortNote:'Short Note', memoryNotePh:'Leave a short note...', chooseFiles:'Choose files', fileTypes:'Choose photos and videos; files will upload one by one.', noFile:'No file selected', uploadBtn:'Upload Memories', vdsNote:'', storyCopy:'From the first date to “yes”, every moment is part of our story.', dateLabel:'Date', timeLabel:'Time', placeLabel:'Place',
 
     startTime:'Starts at 19:00',
     locationKicker:'Where and when', locationTitle:'Engagement Location', locationSub:'We would be happy to see you with us', directions:'Get Directions', programTitle:'Ceremony Program', welcome:'Welcome', ceremony:'Engagement Ceremony', dinner:'Dinner', fun:'Celebration',
     rsvpKicker:'Please confirm', rsvpTitle:'RSVP', rsvpSub:'Please let us know if you will attend', guestCount:'How many guests?', select:'Select', coming:'I am coming', notComing:'I cannot come', note:'Note', notePh:'Leave us a short message...', send:'Send',
-    quote:'“Different languages, different roads... But the same heart.”', finalTop:'We cannot wait to share this', finalScript:'special day with you', finalThanks:'Thank you for being part of our engagement and sharing our happiness.', finalAwait:'We are waiting for you', rsvpAlert:'Your RSVP has been received. Thank you ❤️', uploadAlert:'Files uploaded successfully.', uploadDone:'Uploaded successfully', uploadFailed:'Upload failed.', uploadConnection:'Upload connection error.', uploadResponse:'Upload response error.', invalidFile:'Invalid file type.', fileTooLarge:'File is too large.', rsvpError:'Submission error.', fileSelected:'files selected', retryUpload:'Upload again', linkCopied:'Link copied', calendarDownloaded:'Calendar file downloaded', audioOn:'Mute', audioOff:'Play sound', audioToggleLabel:'Music', qrKicker:'Memory Table', qrText:'You can open the invitation or share your photos and videos with us.', qrInvite:'Go to Invitation', qrMemories:'Share Memories'
+    quote:'“Different languages, different roads... But the same heart.”', finalTop:'We cannot wait to share this', finalScript:'special day with you', finalThanks:'Thank you for being part of our engagement and sharing our happiness.', finalAwait:'We are waiting for you', rsvpAlert:'Your RSVP has been received. Thank you ❤️', uploadAlert:'Files uploaded successfully.', uploadDone:'Uploaded successfully', uploadFailed:'Upload failed.', uploadConnection:'Upload connection error.', uploadResponse:'Upload response error.', invalidFile:'Invalid file type.', fileTooLarge:'File is too large.', rsvpError:'Submission error.', fileSelected:'files selected', retryUpload:'Upload again', linkCopied:'Link copied', calendarDownloaded:'Calendar file downloaded', audioOn:'Mute', audioOff:'Play sound', audioToggleLabel:'Music', qrKicker:'Memory Table', qrText:'Choose how you would like to continue.', qrInvite:'Go to Invitation', qrMemories:'Share Memories'
   }
 };
 
@@ -455,16 +455,19 @@ function initUpload(){
   const input = $('#memoryFiles');
   const dropZone = $('#dropZone');
   const list = $('#uploadList');
+  const thanks = $('#uploadThanks');
   if(!form || !input || !dropZone) return;
 
   input.addEventListener('change', () => {
     if(input.files?.length) addMemoryFiles(input, input.files);
     else syncMemoryInput(input);
+    thanks?.classList.remove('show');
   });
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
     list.innerHTML = '';
+    thanks?.classList.remove('show');
     const files = [...input.files];
     if(!files.length){ toast(t('noFile')); return; }
 
@@ -505,6 +508,7 @@ function initUpload(){
         form.reset();
         selectedMemoryFiles = [];
         updateFileCount();
+        thanks?.classList.add('show');
       }else{
         selectedMemoryFiles = failedFiles;
         syncMemoryInput(input);
@@ -530,6 +534,7 @@ function initUpload(){
     form.reset();
     selectedMemoryFiles = [];
     updateFileCount();
+    thanks?.classList.add('show');
   });
 }
 

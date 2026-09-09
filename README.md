@@ -26,6 +26,7 @@ FLASK_SECRET_KEY=your-long-random-secret
 
 - Site: https://shandfi.com
 - Admin: https://shandfi.com/admin
+- Hidden guest gallery: https://shandfi.com/sizden-gelenler
 - Health: https://shandfi.com/api/health
 
 ## Notes

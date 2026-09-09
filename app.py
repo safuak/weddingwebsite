@@ -379,6 +379,25 @@ def load_memory_uploads() -> dict:
     }
 
 
+def public_memory_items() -> list[dict]:
+    memories = load_memory_uploads()
+    items = []
+    for group in memories["groups"]:
+        for file in group["files"]:
+            if file["type"] not in {"image", "video"}:
+                continue
+            items.append(
+                {
+                    "guest": group["guest"],
+                    "name": file["name"],
+                    "relative_path": file["relative_path"],
+                    "type": file["type"],
+                    "updated_at": file["updated_at"],
+                }
+            )
+    return items
+
+
 def resolve_upload_path(filename: str) -> Path:
     path = (UPLOAD_DIR / filename).resolve()
     if not path.is_file() or UPLOAD_DIR.resolve() not in path.parents:
@@ -474,6 +493,15 @@ def admin_dashboard():
     active_tab = request.args.get("tab", "rsvp")
     rows = load_rsvps()
     memories = load_memory_uploads()
+    storage = upload_storage_summary()
+    storage_status = "good"
+    storage_message = "Site sagligi iyi gorunuyor."
+    if storage["disk_free_gb"] < 5:
+        storage_status = "danger"
+        storage_message = "Disk alani kritik seviyede, yuklemeler etkilenebilir."
+    elif storage["disk_free_gb"] < 20:
+        storage_status = "warn"
+        storage_message = "Disk alani dusuyor, yakinda temizlik gerekebilir."
     status_filter = request.args.get("status", "all")
     if status_filter in {"coming", "not-coming"}:
         visible_rows = [row for row in rows if row["status"] == status_filter]
@@ -499,6 +527,16 @@ def admin_dashboard():
             .tabs{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 20px}
             .tabs a{border:1px solid var(--line);background:#fff;color:var(--ink);padding:12px 16px;border-radius:999px;text-decoration:none;font-weight:800}
             .tabs a.active{background:var(--gold);border-color:var(--gold);color:#fff}
+            .health-card{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;margin:0 0 18px;background:rgba(255,250,243,.86);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 14px 34px rgba(73,45,20,.07)}
+            .health-card strong{display:block;font-size:18px;color:#7d581c}
+            .health-card p{margin:6px 0 0;color:var(--muted);font-weight:700}
+            .health-metrics{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+            .health-metrics span{display:inline-flex;border:1px solid var(--line);border-radius:999px;background:#fff;padding:8px 10px;font-weight:900;color:var(--ink);font-size:12px}
+            .health-card.warn{border-color:#d9ad49;background:#fff8e8}
+            .health-card.danger{border-color:#dc8c8c;background:#fff0f0}
+            .admin-actions{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 18px}
+            .admin-actions a{border:1px solid var(--line);background:#fff;color:var(--gold);padding:11px 14px;border-radius:12px;text-decoration:none;font-weight:900}
+            .admin-actions a.primary{background:var(--gold);border-color:var(--gold);color:#fff}
             .stats{display:grid;grid-template-columns:repeat(6,minmax(130px,1fr));gap:12px;margin-bottom:18px}
             .stats.memories{grid-template-columns:repeat(3,minmax(160px,1fr))}
             .stat{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:0 14px 34px rgba(73,45,20,.08)}
@@ -548,7 +586,7 @@ def admin_dashboard():
             .file-actions form{margin:0}
             .row-delete{margin:0}
             .row-delete button{border:1px solid #efc4c4;border-radius:10px;background:#fff0f0;color:#a33;padding:9px 12px;font-weight:900;cursor:pointer}
-            @media(max-width:860px){.top{align-items:flex-start;flex-direction:column}.stats,.stats.memories{grid-template-columns:repeat(2,1fr)}}
+            @media(max-width:860px){.top{align-items:flex-start;flex-direction:column}.health-card{grid-template-columns:1fr}.health-metrics{justify-content:flex-start}.stats,.stats.memories{grid-template-columns:repeat(2,1fr)}}
           </style>
         </head>
         <body>
@@ -565,6 +603,23 @@ def admin_dashboard():
               <a class="{{ 'active' if active_tab == 'rsvp' else '' }}" href="{{ url_for('admin_dashboard') }}">Katilim Durumu</a>
               <a class="{{ 'active' if active_tab == 'memories' else '' }}" href="{{ url_for('admin_dashboard', tab='memories') }}">Anilarimizi Saklayalim</a>
             </nav>
+
+            <section class="health-card {{ storage_status }}">
+              <div>
+                <strong>Site sagligi</strong>
+                <p>{{ storage_message }}</p>
+              </div>
+              <div class="health-metrics">
+                <span>Disk bos: {{ storage.disk_free_gb }} GB</span>
+                <span>Upload: {{ storage.total_size_mb }} MB</span>
+                <span>Dosya: {{ storage.file_count }}</span>
+              </div>
+            </section>
+
+            <div class="admin-actions">
+              <a class="primary" href="{{ url_for('public_memories') }}" target="_blank" rel="noopener">Sizden Gelenler sayfasini ac</a>
+              <a href="{{ url_for('health_check') }}" target="_blank" rel="noopener">Health JSON</a>
+            </div>
 
             {% if active_tab == 'memories' %}
             <section class="stats memories">
@@ -729,6 +784,9 @@ def admin_dashboard():
         active_tab=active_tab,
         memories=memories,
         csrf_token=admin_csrf_token(),
+        storage=storage,
+        storage_status=storage_status,
+        storage_message=storage_message,
     )
 
 
@@ -821,6 +879,76 @@ def health_check():
             "uploads": upload_storage_summary(),
         }
     )
+
+
+@app.route("/sizden-gelenler")
+def public_memories():
+    items = public_memory_items()
+    return render_template_string(
+        """
+        <!doctype html>
+        <html lang="tr">
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <meta name="robots" content="noindex, nofollow">
+          <title>Sizden Gelenler | Fikrie & Şafak</title>
+          <style>
+            :root{--gold:#b8892d;--ink:#3d2b1f;--muted:#7a6a5f;--line:#ead8bc;--paper:#fffaf3}
+            *{box-sizing:border-box}
+            body{margin:0;background:linear-gradient(180deg,#fffaf2,#f6ead6);color:var(--ink);font-family:Arial,sans-serif}
+            .wrap{width:min(1120px,calc(100vw - 28px));margin:0 auto;padding:42px 0 60px}
+            header{text-align:center;margin-bottom:26px}
+            .eyebrow{margin:0 0 10px;color:var(--gold);font-weight:900;text-transform:uppercase;letter-spacing:.22em;font-size:12px}
+            h1{margin:0;font-family:Georgia,serif;font-size:clamp(42px,9vw,78px);line-height:.95;color:#7d581c}
+            header p{max-width:620px;margin:18px auto 0;color:var(--muted);line-height:1.7;font-weight:700}
+            .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px}
+            .item{position:relative;display:grid;border:1px solid rgba(184,137,45,.3);border-radius:10px;overflow:hidden;background:#fffaf3;box-shadow:0 16px 34px rgba(73,45,20,.1);min-height:220px}
+            .item img,.item video{width:100%;height:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+            .caption{position:absolute;left:8px;right:8px;bottom:8px;border-radius:8px;background:rgba(255,250,243,.88);padding:8px 10px;color:#6f4d1c;font-size:12px;font-weight:900;backdrop-filter:blur(8px)}
+            .caption small{display:block;color:var(--muted);font-weight:700;margin-top:3px}
+            .empty{max-width:520px;margin:0 auto;padding:34px;border:1px solid var(--line);border-radius:14px;background:rgba(255,250,243,.86);text-align:center;color:var(--muted);font-weight:800}
+            @media(max-width:520px){.wrap{padding-top:28px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.item{min-height:170px}.caption{font-size:11px}}
+          </style>
+        </head>
+        <body>
+          <main class="wrap">
+            <header>
+              <p class="eyebrow">Sizden gelenler</p>
+              <h1>Paylaşılan Anılar</h1>
+              <p>Misafirlerimizin bizimle paylaştığı fotoğraf ve videolar burada bir araya geliyor.</p>
+            </header>
+            {% if items %}
+            <section class="gallery">
+              {% for item in items %}
+              <article class="item">
+                {% if item.type == 'image' %}
+                <img src="{{ url_for('public_upload_file', filename=item.relative_path) }}" alt="{{ item.guest }} anısı" loading="lazy" decoding="async">
+                {% else %}
+                <video src="{{ url_for('public_upload_file', filename=item.relative_path) }}" controls preload="metadata" playsinline></video>
+                {% endif %}
+                <div class="caption">{{ item.guest }}<small>{{ item.updated_at }}</small></div>
+              </article>
+              {% endfor %}
+            </section>
+            {% else %}
+            <div class="empty">Henüz paylaşılan anı yok.</div>
+            {% endif %}
+          </main>
+        </body>
+        </html>
+        """,
+        items=items,
+    )
+
+
+@app.route("/sizden-gelenler/dosya/<path:filename>")
+def public_upload_file(filename: str):
+    try:
+        resolve_upload_path(filename)
+    except FileNotFoundError:
+        return jsonify({"success": False, "error": "Not found"}), 404
+    return send_from_directory(UPLOAD_DIR, filename)
 
 
 @app.route("/<path:path>")

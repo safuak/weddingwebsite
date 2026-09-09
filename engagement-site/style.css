@@ -142,26 +142,26 @@ button {
   place-items: center;
   padding: 24px;
   background:
-    radial-gradient(circle at 24% 18%, rgba(255,255,255,.9), transparent 34%),
-    linear-gradient(120deg, rgba(255,255,255,.9), rgba(246,231,203,.94));
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,.95), transparent 34%),
+    linear-gradient(180deg, #fffaf4 0%, #f4e6cd 100%);
 }
 .qr-choice.show {
   display: grid;
 }
 .qr-choice-card {
-  width: min(480px, 100%);
-  padding: 34px 28px;
+  width: min(420px, 100%);
+  padding: 30px 24px 22px;
   border-radius: 8px;
-  background: rgba(255,253,248,.9);
+  background: rgba(255,253,248,.96);
   border: 1px solid rgba(184,138,47,.36);
-  box-shadow: var(--shadow);
+  box-shadow: 0 22px 60px rgba(95,62,24,.16);
   text-align: center;
 }
 .qr-choice-card h1 {
   font-family: 'Noto Serif Display', Georgia, serif;
-  font-size: clamp(48px, 13vw, 76px);
+  font-size: clamp(42px, 11vw, 62px);
   line-height: .92;
-  margin: 14px 0;
+  margin: 12px 0;
   color: #73531f;
 }
 .qr-choice-card h1 span {
@@ -169,12 +169,18 @@ button {
 }
 .qr-choice-card p:not(.eyebrow) {
   color: var(--muted);
-  line-height: 1.7;
-  margin: 0 auto 22px;
+  line-height: 1.55;
+  margin: 0 auto 20px;
+  max-width: 330px;
 }
 .qr-choice-actions {
   display: grid;
-  gap: 12px;
+  gap: 10px;
+}
+.qr-choice-actions .btn {
+  width: 100%;
+  min-height: 54px;
+  justify-content: center;
 }
 .qr-choice .gate-language {
   position: static;
@@ -1422,6 +1428,31 @@ textarea {
   display: grid;
   gap: 12px;
   margin-bottom: 18px;
+}
+.upload-thanks {
+  display: none;
+  gap: 6px;
+  margin: 0 0 18px;
+  padding: 16px;
+  border: 1px solid rgba(184,137,45,.34);
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(255,250,242,.96), rgba(246,228,190,.78));
+  box-shadow: 0 14px 30px rgba(83,54,27,.1);
+  color: var(--muted);
+  line-height: 1.55;
+  animation: thanksPop .42s ease both;
+}
+.upload-thanks.show {
+  display: grid;
+}
+.upload-thanks strong {
+  color: var(--accent-dark);
+  font-family: 'Noto Serif Display', Georgia, serif;
+  font-size: 24px;
+}
+@keyframes thanksPop {
+  from { opacity: 0; transform: translateY(10px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 .upload-row {
   display: grid;
