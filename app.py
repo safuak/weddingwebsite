@@ -926,7 +926,9 @@ def public_memories():
             h1{margin:0;font-family:'Noto Serif Display',Georgia,serif;font-size:clamp(48px,10vw,90px);line-height:.92;color:#fff8eb}
             .hero p:not(.eyebrow){max-width:650px;margin:18px auto 0;line-height:1.7;font-weight:700}
             .hero-stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:26px}
-            .hero-stats span{min-width:118px;border:1px solid rgba(255,255,255,.42);border-radius:14px;background:rgba(255,255,255,.18);padding:12px 14px;color:#fff;font-weight:900;backdrop-filter:blur(12px)}
+            .hero-stats span,.hero-stats a{min-width:118px;border:1px solid rgba(255,255,255,.42);border-radius:14px;background:rgba(255,255,255,.18);padding:12px 14px;color:#fff;font-weight:900;backdrop-filter:blur(12px);text-decoration:none}
+            .hero-stats .memory-count{color:#ffe2a0;border-color:rgba(221,183,91,.62);background:rgba(184,137,45,.22)}
+            .hero-stats .share-btn{background:rgba(255,250,243,.9);color:#80591b;border-color:rgba(255,255,255,.68)}
             .wrap{width:min(1160px,calc(100vw - 28px));margin:0 auto;padding:44px 0 70px}
             .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}
             .section-head h2{margin:0;font-family:'Noto Serif Display',Georgia,serif;font-size:clamp(36px,7vw,66px);line-height:1;color:#7d581c}
@@ -945,7 +947,7 @@ def public_memories():
             .lightbox.media-video img{display:none}.lightbox.media-video video{display:block}
             .close,.navbtn{position:fixed;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.88);color:#5a3b1c;border-radius:999px;width:44px;height:44px;font-size:28px;cursor:pointer}
             .close{top:18px;right:18px}.prev{left:18px}.next{right:18px}.navbtn{top:50%;transform:translateY(-50%)}
-            @media(max-width:760px){.nav{display:none}.topbar{padding:12px 16px}.logo{font-size:25px}.hero{min-height:360px;padding-top:48px}.section-head{display:block}.section-head p{margin-top:10px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.item{min-height:170px}.caption{font-size:11px}.lang-switch button{padding:7px 8px;font-size:12px}}
+            @media(max-width:760px){.topbar{display:grid;grid-template-columns:auto 1fr;align-items:center;padding:12px 14px}.nav{grid-column:1/-1;display:flex;justify-content:center;gap:8px;order:3;margin-top:10px}.nav a{font-size:12px;padding:8px 10px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.72)}.actions{justify-content:flex-end}.logo{font-size:25px}.hero{min-height:360px;padding-top:38px}.section-head{display:block}.section-head p{margin-top:10px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.item{min-height:170px}.caption{font-size:11px}.lang-switch button{padding:7px 8px;font-size:12px}.hero-stats span,.hero-stats a{min-width:132px}.hero-stats{margin-top:20px}}
           </style>
         </head>
         <body>
@@ -970,8 +972,8 @@ def public_memories():
               <h1 data-i18n="heroTitle">Споделени спомени</h1>
               <p data-i18n="heroText">Снимките и видеата, които ни изпратихте, се събират тук като малък албум от нашия ден.</p>
               <div class="hero-stats">
-                <span>{{ items|length }} <i data-i18n="countLabel">спомена</i></span>
-                <span>Fikrie & Şafak</span>
+                <span class="memory-count">{{ items|length }} <i data-i18n="countLabel">спомена</i></span>
+                <a class="share-btn" href="/?qr=1" data-i18n="shareButton">Споделете спомени</a>
               </div>
             </div>
           </section>
@@ -1012,9 +1014,9 @@ def public_memories():
 
           <script>
             const translations = {
-              bg:{navInvite:'Покана',navShare:'Сподели спомени',kicker:'От вас',heroTitle:'Споделени спомени',heroText:'Снимките и видеата, които ни изпратихте, се събират тук като малък албум от нашия ден.',countLabel:'спомена',galleryKicker:'Галерия',galleryTitle:'Нашите гости',galleryText:'Благодарим ви, че споделихте тези красиви моменти с нас.',empty:'Все още няма споделени спомени.'},
-              tr:{navInvite:'Davetiye',navShare:'Anı Paylaş',kicker:'Sizden gelenler',heroTitle:'Paylaşılan Anılar',heroText:'Bize gönderdiğiniz fotoğraf ve videolar burada küçük bir anı albümü gibi toplanıyor.',countLabel:'anı',galleryKicker:'Galeri',galleryTitle:'Sizden Gelenler',galleryText:'Bu güzel anları bizimle paylaştığınız için çok teşekkür ederiz.',empty:'Henüz paylaşılan anı yok.'},
-              en:{navInvite:'Invitation',navShare:'Share Memories',kicker:'From you',heroTitle:'Shared Memories',heroText:'The photos and videos you sent us gather here as a small album from our day.',countLabel:'memories',galleryKicker:'Gallery',galleryTitle:'From Our Guests',galleryText:'Thank you for sharing these beautiful moments with us.',empty:'No shared memories yet.'}
+              bg:{navInvite:'Покана',navShare:'Сподели спомени',kicker:'От вас',heroTitle:'Споделени спомени',heroText:'Снимките и видеата, които ни изпратихте, се събират тук като малък албум от нашия ден.',countLabel:'спомена',shareButton:'Споделете спомени',galleryKicker:'Галерия',galleryTitle:'Нашите гости',galleryText:'Благодарим ви, че споделихте тези красиви моменти с нас.',empty:'Все още няма споделени спомени.'},
+              tr:{navInvite:'Davetiye',navShare:'Anı Paylaş',kicker:'Sizden gelenler',heroTitle:'Paylaşılan Anılar',heroText:'Bize gönderdiğiniz fotoğraf ve videolar burada küçük bir anı albümü gibi toplanıyor.',countLabel:'anı',shareButton:'Anılarınızı Paylaşın',galleryKicker:'Galeri',galleryTitle:'Sizden Gelenler',galleryText:'Bu güzel anları bizimle paylaştığınız için çok teşekkür ederiz.',empty:'Henüz paylaşılan anı yok.'},
+              en:{navInvite:'Invitation',navShare:'Share Memories',kicker:'From you',heroTitle:'Shared Memories',heroText:'The photos and videos you sent us gather here as a small album from our day.',countLabel:'memories',shareButton:'Share Your Memories',galleryKicker:'Gallery',galleryTitle:'From Our Guests',galleryText:'Thank you for sharing these beautiful moments with us.',empty:'No shared memories yet.'}
             };
             let currentLang = localStorage.getItem('siteLang') || 'bg';
             const $ = (selector, root = document) => root.querySelector(selector);
