@@ -1,0 +1,142 @@
+ŞAFAK & FIFI ENGAGEMENT SITE - VDS NOTLARI
+==========================================
+
+Bu sürüm araştırmaya göre güncellendi:
+- Bulgarca varsayılan açılış dili
+- TR / BG / EN dil sistemi
+- Tek sayfa, mobil öncelikli layout
+- Davetiye kapak ekranı
+- Smooth reveal animasyonları
+- Hafif gül yaprağı canvas efekti
+- Galeri filtreleme + lightbox
+- Fotoğraf/video yükleme alanı + progress UI
+- Özel QR bölümü
+- Takvime ekle (.ics) butonu
+- Optimize edilmiş WebP görseller
+
+1) DOSYA YAPISI
+----------------
+engagement-site/
+  index.html
+  style.css
+  script.js
+  assets/
+    hero-1280.webp
+    roses-900.webp
+    qr-invite.png
+    gallery2/
+      gallery-01.jpeg ... gallery-29.jpeg
+      gallery-30.mp4
+
+2) QR LINK DEĞİŞTİRME
+---------------------
+script.js içinde şu satırı değiştir:
+
+const INVITE_URL = 'https://engagement.safuak.xyz';
+
+Örnek:
+const INVITE_URL = 'https://nisan.safuak.xyz';
+
+QR görseli şu an placeholder link için üretildi:
+https://engagement.safuak.xyz
+
+Domain kesinleşince QR görselini yeniden üretmek daha doğru olur.
+
+3) WINDOWS VDS BASİT CANLIYA ALMA
+---------------------------------
+En kolay başlangıç:
+- Windows Server 2022
+- Python 3.12/3.13
+- Flask + Waitress
+- IIS reverse proxy veya direkt Waitress
+
+Komutlar:
+python -m venv .venv
+.venv\Scripts\activate
+pip install flask waitress
+waitress-serve --host=127.0.0.1 --port=8080 app:app
+
+IIS ile public 80/443 -> 127.0.0.1:8080 reverse proxy yapılabilir.
+
+4) UPLOAD ENDPOINT
+------------------
+Frontend hazırdır.
+script.js içinde:
+
+const REAL_UPLOAD_ENABLED = false;
+const UPLOAD_ENDPOINT = '/api/memories/upload';
+
+Backend hazır olunca:
+const REAL_UPLOAD_ENABLED = true;
+
+Upload formu şu alanları gönderir:
+- guestName
+- guestEmail
+- guestNote
+- memories[]
+
+5) GÜVENLİ UPLOAD İÇİN ÖNERİLEN KURALLAR
+----------------------------------------
+- Maks fotoğraf: 20 MB
+- Maks video: 500 MB
+- Kabul edilen uzantılar: jpg, jpeg, png, webp, heic, mp4, mov, webm
+- Dosya adı asla direkt kullanılmamalı, UUID ile kaydedilmeli
+- Upload klasöründe execute izni olmamalı
+- Microsoft Defender ile dosya taraması yapılmalı
+- Misafirlerin yüklediği dosyalar önce moderation / pending durumuna alınmalı
+- Admin onaylamadan public galeride görünmemeli
+
+Önerilen klasör:
+D:\engagement-site\uploads\
+  incoming\
+  staging\
+  approved\
+  rejected\
+
+6) BACKEND İÇİN ÖNERİLEN TABLOLAR
+---------------------------------
+rsvp:
+- id
+- name
+- guests
+- status
+- note
+- created_at
+
+memories:
+- id
+- guest_name
+- guest_email
+- note
+- original_filename
+- stored_filename
+- mime_type
+- size_bytes
+- status: pending / approved / rejected
+- created_at
+
+7) QR KOD TASARIMI
+------------------
+QR için öneri:
+- Kısa link kullan: https://q.safuak.xyz/sf2026
+- Bu link gerçek siteye yönlendirsin
+- Böylece QR basıldıktan sonra bile hedef link değiştirilebilir
+- QR dosyası PNG veya SVG olarak basılmalı
+- Hata düzeltme seviyesi yüksek olmalı
+
+8) PERFORMANS NOTLARI
+---------------------
+- Hero görseli WebP olarak optimize edildi
+- Galeri görselleri lazy loading kullanıyor
+- Animasyonlar transform + opacity mantığıyla çalışıyor
+- prefers-reduced-motion desteği eklendi
+
+9) SONRA EKLENEBİLECEKLER
+-------------------------
+- Admin paneli
+- Yüklenen anıları onaylama/silme
+- RSVP listesini Excel/CSV indirme
+- QR scan tracking
+- Cloudflare Turnstile bot koruması
+- Foto/video otomatik thumbnail üretimi
+- Cloudflare R2 veya S3 depolama

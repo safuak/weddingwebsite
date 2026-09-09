@@ -1,0 +1,311 @@
+﻿<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fff7f2" />
+  <meta name="description" content="Fikrie & Şafak nişan davetiyesi - 26.09.2026" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Fikrie & Şafak" />
+  <meta property="og:title" content="Fikrie & Şafak | 26.09.2026" />
+  <meta property="og:description" content="Fikrie & Şafak nişan davetiyesine bekliyoruz. 26.09.2026 - 19:00 - Valkosel, Bulgaria" />
+  <meta property="og:url" content="https://shandfi.com/" />
+  <meta property="og:image" content="https://shandfi.com/assets/og-image.jpg?v=20260909-02" />
+  <meta property="og:image:secure_url" content="https://shandfi.com/assets/og-image.jpg?v=20260909-02" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Fikrie & Şafak nişan davetiyesi" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fikrie & Şafak | 26.09.2026" />
+  <meta name="twitter:description" content="Fikrie & Şafak nişan davetiyesine bekliyoruz. 26.09.2026 - 19:00 - Valkosel, Bulgaria" />
+  <meta name="twitter:image" content="https://shandfi.com/assets/og-image.jpg?v=20260909-02" />
+  <title>Fikrie & Şafak | 26.09.2026</title>
+  <link rel="icon" href="assets/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="preload" as="image" href="assets/floral-gold-door.webp" fetchpriority="high" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Serif+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=20260909-02" />
+</head>
+<body>
+  <canvas id="petalsCanvas" aria-hidden="true"></canvas>
+  <div class="flower-shower" id="flowerShower" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <section class="qr-choice" id="qrChoice" aria-hidden="true">
+    <div class="qr-choice-card">
+      <p class="eyebrow" data-i18n="qrKicker">Маса за спомени</p>
+      <h1>Fikrie <span>&</span> Şafak</h1>
+      <p data-i18n="qrText">Можете да отворите поканата или да споделите снимките и видеата си с нас.</p>
+      <div class="qr-choice-actions">
+        <button class="btn primary" type="button" id="qrOpenInvite" data-i18n="qrInvite">Към поканата</button>
+        <button class="btn glass" type="button" id="qrShareMemories" data-i18n="qrMemories">Сподели спомени</button>
+      </div>
+      <div class="gate-language lang-switch" aria-label="Language selector">
+        <button type="button" data-lang="bg">🇧🇬 BG</button>
+        <button type="button" data-lang="tr">🇹🇷 TR</button>
+        <button type="button" data-lang="en">🇬🇧 EN</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="invite-gate" id="inviteGate" aria-label="Invitation cover">
+    <div class="gate-bg" aria-hidden="true"></div>
+    <div class="gate-language lang-switch" aria-label="Language selector">
+      <button type="button" data-lang="bg">🇧🇬 BG</button>
+      <button type="button" data-lang="tr">🇹🇷 TR</button>
+      <button type="button" data-lang="en">🇬🇧 EN</button>
+    </div>
+    <div class="door-scene" id="openInvite" role="button" tabindex="0" aria-label="Open invitation">
+      <div class="door-panel door-left" aria-hidden="true"></div>
+      <div class="door-panel door-right" aria-hidden="true"></div>
+      <div class="spark-layer" id="sparkLayer" aria-hidden="true"></div>
+      <div class="door-center">
+        <div class="monogram">F<span>&</span>Ş</div>
+        <p class="eyebrow" data-i18n="gateSmall">Покана за годеж</p>
+        <h1 class="gate-title">Fikrie <span>&</span> Şafak</h1>
+        <p class="gate-copy" data-i18n="gateText">Ще се радваме да бъдете с нас в този специален ден.</p>
+        <div class="invite-date">26 . 09 . 2026</div>
+        <button class="btn primary btn-big" type="button" data-i18n="openInvite">Продължи</button>
+      </div>
+    </div>
+  </section>
+
+  <header class="topbar" id="topbar">
+    <a class="logo logo-reopen" href="#inviteGate" aria-label="Invitation">F<span>&</span>Ş</a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#story" data-i18n="navStory">История</a>
+      <a href="#gallery" data-i18n="navGallery">Галерия</a>
+      <a href="#upload" data-i18n="navUpload">Спомени</a>
+      <a href="#rsvp" data-i18n="navRsvp">Потвърдете</a>
+    </nav>
+    <div class="top-actions">
+      <div class="lang-switch" aria-label="Language selector">
+        <button type="button" data-lang="bg">🇧🇬 BG</button>
+        <button type="button" data-lang="tr">🇹🇷 TR</button>
+        <button type="button" data-lang="en">🇬🇧 EN</button>
+      </div>
+      <button class="music-btn" type="button" id="audioToggle" aria-label="Music" aria-pressed="false">♪</button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <aside class="side-menu" id="sideMenu" aria-hidden="true">
+    <div class="side-menu-panel">
+      <div class="side-head">
+        <div class="logo">F<span>&</span>Ş</div>
+        <button class="menu-close" id="menuClose" type="button" aria-label="Close menu">×</button>
+      </div>
+      <a href="#home" data-i18n="navHome">Начало</a>
+      <a href="#story" data-i18n="navStory">История</a>
+      <a href="#gallery" data-i18n="navGallery">Галерия</a>
+      <a href="#upload" data-i18n="navUpload">Спомени</a>
+      <a href="#location" data-i18n="navLocation">Място</a>
+      <a href="#rsvp" data-i18n="navRsvp">Потвърдете</a>
+      <div class="menu-langs">
+        <button type="button" data-lang="bg">🇧🇬 BG</button>
+        <button type="button" data-lang="tr">🇹🇷 TR</button>
+        <button type="button" data-lang="en">🇬🇧 EN</button>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <section id="home" class="countdown-widget section-panel">
+      <picture>
+        <img src="assets/hero-arkaplan2.webp" alt="Fikrie and Şafak" decoding="async" />
+      </picture>
+      <div class="countdown-overlay" aria-hidden="true"></div>
+      <div class="countdown-content reveal-now">
+        <div class="hero-title-block">
+          <p class="hero-sub" data-i18n="heroSub">Годеж</p>
+          <h1><span class="name-gold">Fikrie</span> <span>&</span> Şafak</h1>
+          <p class="hero-invite-line" data-i18n="heroInviteLine">Имаме удоволствието да Ви поканим на нашия годеж</p>
+        </div>
+        <div class="hero-visual-space" aria-hidden="true"></div>
+        <div class="countdown-grid" aria-label="Countdown">
+          <div><strong id="days">000</strong><span data-i18n="days">дни</span></div>
+          <b aria-hidden="true">:</b>
+          <div><strong id="hours">00</strong><span data-i18n="hours">часа</span></div>
+          <b aria-hidden="true">:</b>
+          <div><strong id="minutes">00</strong><span data-i18n="minutes">мин</span></div>
+          <b aria-hidden="true">:</b>
+          <div><strong id="seconds">00</strong><span data-i18n="seconds">сек</span></div>
+        </div>
+        <div class="hero-details">
+          <div class="date-detail"><strong data-i18n="dateLabel">Дата</strong><span>26.09.2026</span></div>
+          <div class="time-detail"><strong data-i18n="timeLabel">Час</strong><span>19:00</span></div>
+          <div class="place-detail"><strong data-i18n="placeLabel">Място</strong><span>Valkosel, Bulgaria</span></div>
+        </div>
+        <div class="hero-buttons">
+          <button class="btn reminder-btn" type="button" id="downloadCalendar" data-i18n="reminderBtn">Hatırlatıcı Al</button>
+          <a href="#rsvp" class="btn primary" data-i18n="rsvpBtn">Потвърди присъствие</a>
+          <a href="#story" class="btn glass" data-i18n="inviteBtn">Виж поканата</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="story" class="section story reveal">
+      <div class="section-title">
+        <p class="eyebrow" data-i18n="storyKicker">Нашата малка история</p>
+        <h2 data-i18n="storyTitle">Нашата история</h2>
+        <p class="subtitle" data-i18n="storySub">Всяка любов започва с история</p>
+      </div>
+      <div class="story-grid">
+        <div class="story-copy card-soft">
+          <p data-i18n="storyCopy">От първата среща до момента, в който казахме „да“ – всяка стъпка е част от нашата приказка.</p>
+        </div>
+        <div class="timeline">
+          <article class="step"><span>♡</span><div><h3 data-i18n="s1t">Запознахме се</h3><p data-i18n="s1p">Запознахме се в Non Stop.</p></div></article>
+          <article class="step"><span>⇄</span><div><h3 data-i18n="s2t">Говорихме с превод</h3><p data-i18n="s2p">Не говорехме един език, но сърцата ни се разбраха.</p></div></article>
+          <article class="step"><span>☕</span><div><h3 data-i18n="s3t">Първа среща</h3><p data-i18n="s3p">Незабравим ден по улиците на София.</p></div></article>
+          <article class="step"><span>♥</span><div><h3 data-i18n="s4t">Първа целувка</h3><p data-i18n="s4p">В този момент всичко се промени.</p></div></article>
+          <article class="step"><span>💍</span><div><h3 data-i18n="s5t">Годеж</h3><p data-i18n="s5p">И сега казваме „да“ завинаги.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section gallery reveal">
+      <div class="section-title">
+        <h2 data-i18n="galleryTitle">Галерия</h2>
+      </div>
+      <div class="gallery-grid">
+        <button class="gallery-item" type="button"><img src="assets/gallery2/gallery-01.jpeg" alt="Fikrie and Şafak memory 1" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery2/gallery-02.jpeg" alt="Fikrie and Şafak memory 2" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery2/gallery-04.jpeg" alt="Fikrie and Şafak memory 4" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery2/gallery-05.jpeg" alt="Fikrie and Şafak memory 5" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery2/gallery-06.jpeg" alt="Fikrie and Şafak memory 6" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery2/gallery-07.jpeg" alt="Fikrie and Şafak memory 7" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery2/gallery-08.jpeg" alt="Fikrie and Şafak memory 8" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery2/gallery-09.jpeg" alt="Fikrie and Şafak memory 9" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery2/gallery-10.jpeg" alt="Fikrie and Şafak memory 10" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery2/gallery-11.jpeg" alt="Fikrie and Şafak memory 11" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery2/gallery-12.jpeg" alt="Fikrie and Şafak memory 12" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery2/gallery-13.jpeg" alt="Fikrie and Şafak memory 13" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery2/gallery-14.jpeg" alt="Fikrie and Şafak memory 14" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery2/gallery-15.jpeg" alt="Fikrie and Şafak memory 15" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery2/gallery-16.jpeg" alt="Fikrie and Şafak memory 16" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery2/gallery-17.jpeg" alt="Fikrie and Şafak memory 17" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery2/gallery-18.jpeg" alt="Fikrie and Şafak memory 18" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery2/gallery-19.jpeg" alt="Fikrie and Şafak memory 19" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery2/gallery-20.jpeg" alt="Fikrie and Şafak memory 20" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery2/gallery-21.jpeg" alt="Fikrie and Şafak memory 21" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery2/gallery-22.jpeg" alt="Fikrie and Şafak memory 22" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery2/gallery-23.jpeg" alt="Fikrie and Şafak memory 23" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery2/gallery-27.jpeg" alt="Fikrie and Şafak memory 27" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery2/gallery-28.jpeg" alt="Fikrie and Şafak memory 28" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery2/gallery-29.jpeg" alt="Fikrie and Şafak memory 29" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery3/gallery3-01.jpeg" alt="Fikrie and Şafak memory 31" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery3/gallery3-02.jpeg" alt="Fikrie and Şafak memory 32" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery3/gallery3-03.jpeg" alt="Fikrie and Şafak memory 33" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery3/gallery3-04.jpeg" alt="Fikrie and Şafak memory 34" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery3/gallery3-05.jpeg" alt="Fikrie and Şafak memory 35" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery3/gallery3-06.jpeg" alt="Fikrie and Şafak memory 36" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery3/gallery3-07.jpeg" alt="Fikrie and Şafak memory 37" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery3/gallery3-08.jpeg" alt="Fikrie and Şafak memory 38" loading="lazy" decoding="async"></button>
+        <button class="gallery-item" type="button"><img src="assets/gallery3/gallery3-09.jpeg" alt="Fikrie and Şafak memory 39" loading="lazy" decoding="async"></button>
+        <button class="gallery-item video-item" type="button" data-media="video" data-src="assets/gallery2/gallery-30.mp4" aria-label="Fikrie and Şafak video">
+          <img src="assets/gallery-video-cover.webp" alt="Fikrie and Şafak video memory" loading="lazy" decoding="async">
+          <span class="play-badge">▶</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="location" class="section location reveal">
+      <div class="section-title">
+        <p class="eyebrow" data-i18n="locationKicker">Къде и кога</p>
+        <h2 data-i18n="locationTitle">Място на годежа</h2>
+        <p class="subtitle" data-i18n="locationSub">Ще се радваме да бъдете с нас</p>
+      </div>
+      <div class="location-grid">
+        <div class="location-card card-soft">
+          <strong>1972 43</strong>
+          <p>2930 Valkosel, Bulgaria</p>
+          <p class="start-time" data-i18n="startTime">Започва в 19:00</p>
+          <a class="btn primary" href="https://maps.app.goo.gl/RSDR5Fvif7AZa7o58" target="_blank" rel="noopener" data-i18n="directions">Упътване</a>
+        </div>
+        <div class="map-card card-soft" aria-label="Map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2986.8600349492885!2d23.982646076977648!3d41.5289704712822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ab8d3a4b8bf407%3A0x5e14fea7a0d90492!2s1972%2043%2C%202930%20Valkosel!5e0!3m2!1str!2sbg!4v1781622160671!5m2!1str!2sbg" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section rsvp-upload reveal">
+      <div class="split-grid">
+        <section id="rsvp" class="card-soft panel-card">
+          <div class="section-title small">
+            <p class="eyebrow" data-i18n="rsvpKicker">Моля, потвърдете</p>
+            <h2 data-i18n="rsvpTitle">Потвърждение</h2>
+          </div>
+          <form id="rsvpForm" class="form-card" method="post" action="/api/rsvp">
+            <label><span data-i18n="fullName">Име и фамилия</span><input type="text" name="name" required data-placeholder="namePh" placeholder="Напишете името си"></label>
+            <label><span data-i18n="guestCount">Колко души ще присъстват?</span><select name="guests"><option data-i18n="select">Изберете</option><option>1</option><option>2</option><option>3+</option></select></label>
+            <div class="radio-box"><label><input type="radio" name="status" value="coming" checked> <span data-i18n="coming">Ще присъствам</span></label><label><input type="radio" name="status" value="not-coming"> <span data-i18n="notComing">Няма да присъствам</span></label></div>
+            <label><span data-i18n="note">Бележка</span><textarea name="note" data-placeholder="notePh" placeholder="Оставете ни кратко послание..."></textarea></label>
+            <button class="btn primary" type="submit" data-i18n="send">Изпрати</button>
+          </form>
+        </section>
+
+        <section id="upload" class="card-soft panel-card upload-panel">
+          <div class="section-title small">
+            <p class="eyebrow" data-i18n="uploadKicker">Дигитална кутия за спомени</p>
+            <h2 data-i18n="uploadTitle">Да запазим спомените</h2>
+          </div>
+          <p class="upload-note-text" data-i18n="uploadText">Изпратете вашите снимки и видеа. Нека спомените ни растат заедно с вас. Всеки кадър е много ценен за нас.</p>
+          <form id="memoryUploadForm" class="upload-form" method="post" action="/api/memories/upload" enctype="multipart/form-data">
+            <label><span data-i18n="fullName">Име и фамилия</span><input type="text" name="guestName" required data-placeholder="namePh" placeholder="Напишете името си"></label>
+            <label class="file-drop" for="memoryFiles" id="dropZone">
+              <input id="memoryFiles" name="memories" type="file" accept="image/*,video/*,.heic,.heif,.webm" multiple required>
+              <span class="file-drop-title" data-i18n="chooseFiles">Изберете файлове</span>
+              <span class="file-drop-text" data-i18n="fileTypes">Можете да изберете снимки и видеа; те ще се качват едно по едно.</span>
+              <strong id="fileCount" data-i18n="noFile">Няма избран файл</strong>
+            </label>
+            <div class="upload-list" id="uploadList" aria-live="polite"></div>
+            <button class="btn primary" type="submit" data-i18n="uploadBtn">Качи спомените</button>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <section class="section final reveal">
+      <div class="final-card card-soft">
+        <p class="final-kicker" data-i18n="finalTop">С нетърпение очакваме да споделим този</p>
+        <p class="final-script" data-i18n="finalScript">специален ден с Вас</p>
+        <div class="final-divider"><span>♥</span></div>
+        <div class="final-monogram" aria-hidden="true"><span>F</span><i></i><span>Ş</span></div>
+        <h2>Fikrie <span>&</span> Şafak</h2>
+        <div class="final-flourish"><span>♥</span></div>
+        <p class="final-thanks" data-i18n="finalThanks">Благодарим Ви, че ще бъдете част от нашия годеж и ще споделите нашето щастие.</p>
+        <div class="final-divider final-divider-small"><span>♥</span></div>
+        <p class="final-await" data-i18n="finalAwait">Очакваме Ви</p>
+        <div class="footer-car-wrap" aria-hidden="true">
+          <img class="footer-car" src="assets/wedding-car-footer.webp" alt="" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Quick navigation">
+    <a href="#home"><span>⌂</span><small data-i18n="navHomeShort">Начало</small></a>
+    <a href="#story"><span>♡</span><small data-i18n="navStoryShort">История</small></a>
+    <a href="#gallery"><span>□</span><small data-i18n="navGalleryShort">Галерия</small></a>
+    <a href="#upload"><span>☁</span><small data-i18n="navUploadShort">Спомени</small></a>
+    <a href="#rsvp"><span>✉</span><small data-i18n="navRsvpShort">RSVP</small></a>
+  </nav>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button id="lightboxClose" type="button" aria-label="Close">×</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button" aria-label="Previous photo">‹</button>
+    <img id="lightboxImg" src="" alt="Gallery preview" />
+    <video id="lightboxVideo" src="" controls playsinline></video>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button" aria-label="Next photo">›</button>
+  </div>
+
+  <audio id="siteAudio" src="shandifi.m4a" preload="none" loop playsinline></audio>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js?v=20260909-02"></script>
+</body>
+</html>

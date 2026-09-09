@@ -1,0 +1,37 @@
+Project: Fikrie & Safak Engagement Invitation Website
+
+Domain:
+https://shandfi.com
+
+Current event information:
+- Names: Fikrie & Safak
+- Date: 26.09.2026
+- Time: 19:00
+- Location: Valkosel, Bulgaria
+- Maps: https://maps.app.goo.gl/RSDR5Fvif7AZa7o58
+
+Languages:
+- Bulgarian
+- Turkish
+- English
+
+Design direction:
+- Elegant engagement invitation
+- White, soft beige, warm gold
+- Floral details, gold accents, soft vintage feeling
+- Opening gate/door animation on first entry
+- QR mode for tables:
+  - Open invitation
+  - Share memories only
+
+Backend:
+- Flask app in app.py
+- Static site in engagement-site/
+- Guest memory uploads in uploads/<guest-name>/
+- Admin panel at /admin
+- Admin password and Flask session secret are loaded from .env or environment variables.
+
+Operational notes:
+- Do not commit .env, uploads, backups, tmp files, logs, or local Caddy binary.
+- Large videos should be compressed with ffmpeg before publishing when ffmpeg is available.
+- Open Graph image is engagement-site/assets/og-image.jpg.

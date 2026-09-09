@@ -1,0 +1,12 @@
+{
+	storage file_system caddy-data
+}
+
+shandfi.com {
+	encode gzip zstd
+	reverse_proxy 127.0.0.1:5000
+}
+
+www.shandfi.com {
+	redir https://shandfi.com{uri} permanent
+}
