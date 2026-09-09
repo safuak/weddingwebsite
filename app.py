@@ -946,9 +946,10 @@ def public_memories():
             h1{margin:0;font-family:'Noto Serif Display',Georgia,serif;font-size:clamp(48px,10vw,90px);line-height:.92;color:#fff8eb}
             .hero p:not(.eyebrow){max-width:650px;margin:18px auto 0;line-height:1.7;font-weight:700}
             .hero-stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:26px}
-            .hero-stats span,.hero-stats a{min-width:118px;border:1px solid rgba(255,255,255,.42);border-radius:14px;background:rgba(255,255,255,.18);padding:12px 14px;color:#fff;font-weight:900;backdrop-filter:blur(12px);text-decoration:none}
-            .hero-stats .memory-count{color:#ffe2a0;border-color:rgba(221,183,91,.62);background:rgba(184,137,45,.22)}
-            .hero-stats .share-btn{background:rgba(255,250,243,.9);color:#80591b;border-color:rgba(255,255,255,.68)}
+            .hero-stats span,.hero-stats a{min-width:132px;border-radius:14px;padding:13px 18px;font-weight:900;backdrop-filter:blur(14px);text-decoration:none;box-shadow:0 14px 34px rgba(54,34,18,.24)}
+            .hero-stats .memory-count{color:#fff;border:1px solid rgba(255,232,176,.78);background:linear-gradient(135deg,#9f711f,#d9b65d 52%,#ad7a24)}
+            .hero-stats .share-btn{background:rgba(255,253,248,.96);color:#684313;border:1px solid rgba(184,137,45,.62)}
+            .hero-stats .share-btn:hover{background:#fff;color:#4c2f0f;transform:translateY(-1px)}
             .wrap{width:min(1160px,calc(100vw - 28px));margin:0 auto;padding:44px 0 70px}
             .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}
             .section-head h2{margin:0;font-family:'Noto Serif Display',Georgia,serif;font-size:clamp(36px,7vw,66px);line-height:1;color:#7d581c}
