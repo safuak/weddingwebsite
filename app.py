@@ -887,54 +887,196 @@ def public_memories():
     return render_template_string(
         """
         <!doctype html>
-        <html lang="tr">
+        <html lang="bg">
         <head>
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <meta name="robots" content="noindex, nofollow">
           <title>Sizden Gelenler | Fikrie & Şafak</title>
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Serif+Display:wght@500;600;700&display=swap" rel="stylesheet">
           <style>
-            :root{--gold:#b8892d;--ink:#3d2b1f;--muted:#7a6a5f;--line:#ead8bc;--paper:#fffaf3}
+            :root{--gold:#b8892d;--gold2:#ddb75b;--ink:#3d2b1f;--muted:#7a6a5f;--line:#ead8bc;--paper:#fffaf3}
             *{box-sizing:border-box}
-            body{margin:0;background:linear-gradient(180deg,#fffaf2,#f6ead6);color:var(--ink);font-family:Arial,sans-serif}
-            .wrap{width:min(1120px,calc(100vw - 28px));margin:0 auto;padding:42px 0 60px}
-            header{text-align:center;margin-bottom:26px}
-            .eyebrow{margin:0 0 10px;color:var(--gold);font-weight:900;text-transform:uppercase;letter-spacing:.22em;font-size:12px}
-            h1{margin:0;font-family:Georgia,serif;font-size:clamp(42px,9vw,78px);line-height:.95;color:#7d581c}
-            header p{max-width:620px;margin:18px auto 0;color:var(--muted);line-height:1.7;font-weight:700}
-            .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px}
-            .item{position:relative;display:grid;border:1px solid rgba(184,137,45,.3);border-radius:10px;overflow:hidden;background:#fffaf3;box-shadow:0 16px 34px rgba(73,45,20,.1);min-height:220px}
-            .item img,.item video{width:100%;height:100%;aspect-ratio:4/5;object-fit:cover;display:block}
-            .caption{position:absolute;left:8px;right:8px;bottom:8px;border-radius:8px;background:rgba(255,250,243,.88);padding:8px 10px;color:#6f4d1c;font-size:12px;font-weight:900;backdrop-filter:blur(8px)}
+            html{scroll-behavior:smooth}
+            body{margin:0;background:
+              radial-gradient(circle at 18% 4%, rgba(255,255,255,.94), transparent 34%),
+              linear-gradient(180deg,#fffaf2,#f6ead6 52%,#fff9ee);color:var(--ink);font-family:Inter,Arial,sans-serif;overflow-x:hidden}
+            body:before,body:after{content:'';position:fixed;z-index:-1;pointer-events:none;opacity:.34;background:url('/assets/floral-gold-door.webp') center/contain no-repeat}
+            body:before{width:360px;height:520px;left:-170px;top:110px;transform:rotate(-4deg)}
+            body:after{width:420px;height:600px;right:-220px;bottom:-80px;transform:rotate(8deg)}
+            .topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(16px,4vw,42px);background:rgba(255,250,243,.9);border-bottom:1px solid rgba(222,196,148,.58);backdrop-filter:blur(16px)}
+            .logo{font-family:'Noto Serif Display',Georgia,serif;font-size:28px;color:#6f4d1c;text-decoration:none;font-weight:700;letter-spacing:0}
+            .logo span,.hero h1 span{color:var(--gold)}
+            .nav{display:flex;gap:18px;align-items:center}
+            .nav a{color:#6f4d1c;text-decoration:none;font-weight:800;font-size:14px}
+            .actions{display:flex;gap:10px;align-items:center}
+            .lang-switch{display:flex;gap:4px;padding:5px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.72)}
+            .lang-switch button{border:0;border-radius:999px;background:transparent;color:#6f4d1c;padding:8px 10px;font-weight:900;cursor:pointer}
+            .lang-switch button.active{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff}
+            .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;border:1px solid rgba(184,137,45,.3);border-radius:14px;padding:12px 16px;background:rgba(255,255,255,.86);color:#6f4d1c;text-decoration:none;font-weight:900;cursor:pointer}
+            .btn.primary{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;border-color:transparent}
+            .hero{position:relative;min-height:440px;display:grid;place-items:center;text-align:center;padding:70px 18px 58px;overflow:hidden}
+            .hero:before{content:'';position:absolute;inset:0;background:
+              linear-gradient(180deg,rgba(48,31,20,.26),rgba(255,248,235,.58)),
+              url('/assets/hero-arkaplan2.webp') center/cover no-repeat;opacity:.9}
+            .hero-inner{position:relative;width:min(760px,100%);color:#fff;text-shadow:0 2px 18px rgba(45,28,18,.22)}
+            .eyebrow{margin:0 0 12px;color:#d8ad45;font-weight:900;text-transform:uppercase;letter-spacing:.28em;font-size:12px}
+            h1{margin:0;font-family:'Noto Serif Display',Georgia,serif;font-size:clamp(48px,10vw,90px);line-height:.92;color:#fff8eb}
+            .hero p:not(.eyebrow){max-width:650px;margin:18px auto 0;line-height:1.7;font-weight:700}
+            .hero-stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+            .hero-stats span{min-width:118px;border:1px solid rgba(255,255,255,.42);border-radius:14px;background:rgba(255,255,255,.18);padding:12px 14px;color:#fff;font-weight:900;backdrop-filter:blur(12px)}
+            .wrap{width:min(1160px,calc(100vw - 28px));margin:0 auto;padding:44px 0 70px}
+            .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}
+            .section-head h2{margin:0;font-family:'Noto Serif Display',Georgia,serif;font-size:clamp(36px,7vw,66px);line-height:1;color:#7d581c}
+            .section-head p{max-width:430px;margin:0;color:var(--muted);line-height:1.6;font-weight:700}
+            .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+            .item{position:relative;display:grid;border:1px solid rgba(184,137,45,.28);border-radius:10px;overflow:hidden;background:#fffaf3;box-shadow:0 16px 34px rgba(73,45,20,.1);min-height:230px;cursor:pointer}
+            .item img,.item video{width:100%;height:100%;aspect-ratio:4/5;object-fit:cover;display:block;filter:sepia(.08) contrast(.97) saturate(.95)}
+            .item video{background:#2a201b}
+            .caption{position:absolute;left:8px;right:8px;bottom:8px;border-radius:8px;background:rgba(255,250,243,.9);padding:8px 10px;color:#6f4d1c;font-size:12px;font-weight:900;backdrop-filter:blur(8px)}
             .caption small{display:block;color:var(--muted);font-weight:700;margin-top:3px}
-            .empty{max-width:520px;margin:0 auto;padding:34px;border:1px solid var(--line);border-radius:14px;background:rgba(255,250,243,.86);text-align:center;color:var(--muted);font-weight:800}
-            @media(max-width:520px){.wrap{padding-top:28px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.item{min-height:170px}.caption{font-size:11px}}
+            .empty{max-width:560px;margin:0 auto;padding:34px;border:1px solid var(--line);border-radius:14px;background:rgba(255,250,243,.86);text-align:center;color:var(--muted);font-weight:800}
+            .lightbox{position:fixed;inset:0;z-index:50;display:none;place-items:center;padding:22px;background:rgba(28,20,17,.84);backdrop-filter:blur(10px)}
+            .lightbox.open{display:grid}
+            .lightbox img,.lightbox video{max-width:min(96vw,980px);max-height:84vh;border-radius:10px;box-shadow:0 24px 70px rgba(0,0,0,.35);background:#111}
+            .lightbox img{display:block}.lightbox video{display:none}
+            .lightbox.media-video img{display:none}.lightbox.media-video video{display:block}
+            .close,.navbtn{position:fixed;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.88);color:#5a3b1c;border-radius:999px;width:44px;height:44px;font-size:28px;cursor:pointer}
+            .close{top:18px;right:18px}.prev{left:18px}.next{right:18px}.navbtn{top:50%;transform:translateY(-50%)}
+            @media(max-width:760px){.nav{display:none}.topbar{padding:12px 16px}.logo{font-size:25px}.hero{min-height:360px;padding-top:48px}.section-head{display:block}.section-head p{margin-top:10px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.item{min-height:170px}.caption{font-size:11px}.lang-switch button{padding:7px 8px;font-size:12px}}
           </style>
         </head>
         <body>
-          <main class="wrap">
-            <header>
-              <p class="eyebrow">Sizden gelenler</p>
-              <h1>Paylaşılan Anılar</h1>
-              <p>Misafirlerimizin bizimle paylaştığı fotoğraf ve videolar burada bir araya geliyor.</p>
-            </header>
+          <header class="topbar">
+            <a class="logo" href="/">F<span>&</span>Ş</a>
+            <nav class="nav" aria-label="Navigation">
+              <a href="/" data-i18n="navInvite">Покана</a>
+              <a href="/?share=memories" data-i18n="navShare">Сподели спомени</a>
+              <a href="/admin" data-i18n="navAdmin">Админ</a>
+            </nav>
+            <div class="actions">
+              <div class="lang-switch" aria-label="Language selector">
+                <button type="button" data-lang="bg">🇧🇬 BG</button>
+                <button type="button" data-lang="tr">🇹🇷 TR</button>
+                <button type="button" data-lang="en">🇬🇧 EN</button>
+              </div>
+            </div>
+          </header>
+
+          <section class="hero">
+            <div class="hero-inner">
+              <p class="eyebrow" data-i18n="kicker">От вас</p>
+              <h1 data-i18n="heroTitle">Споделени спомени</h1>
+              <p data-i18n="heroText">Снимките и видеата, които ни изпратихте, се събират тук като малък албум от нашия ден.</p>
+              <div class="hero-stats">
+                <span>{{ items|length }} <i data-i18n="countLabel">спомена</i></span>
+                <span>Fikrie & Şafak</span>
+              </div>
+            </div>
+          </section>
+
+          <main class="wrap" id="gallery">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow" data-i18n="galleryKicker">Галерия</p>
+                <h2 data-i18n="galleryTitle">Сизден gelenler</h2>
+              </div>
+              <p data-i18n="galleryText">Благодарим ви, че споделихте тези красиви моменти с нас.</p>
+            </div>
             {% if items %}
             <section class="gallery">
               {% for item in items %}
-              <article class="item">
+              <button class="item" type="button" data-media="{{ item.type }}" data-src="{{ url_for('public_upload_file', filename=item.relative_path) }}">
                 {% if item.type == 'image' %}
                 <img src="{{ url_for('public_upload_file', filename=item.relative_path) }}" alt="{{ item.guest }} anısı" loading="lazy" decoding="async">
                 {% else %}
-                <video src="{{ url_for('public_upload_file', filename=item.relative_path) }}" controls preload="metadata" playsinline></video>
+                <video src="{{ url_for('public_upload_file', filename=item.relative_path) }}" preload="metadata" muted playsinline></video>
                 {% endif %}
                 <div class="caption">{{ item.guest }}<small>{{ item.updated_at }}</small></div>
-              </article>
+              </button>
               {% endfor %}
             </section>
             {% else %}
-            <div class="empty">Henüz paylaşılan anı yok.</div>
+            <div class="empty" data-i18n="empty">Все още няма споделени спомени.</div>
             {% endif %}
           </main>
+
+          <div class="lightbox" id="lightbox" aria-hidden="true">
+            <button class="close" id="closeLightbox" type="button" aria-label="Close">×</button>
+            <button class="navbtn prev" id="prevMedia" type="button" aria-label="Previous">‹</button>
+            <img id="lightboxImg" alt="Memory preview">
+            <video id="lightboxVideo" controls playsinline></video>
+            <button class="navbtn next" id="nextMedia" type="button" aria-label="Next">›</button>
+          </div>
+
+          <script>
+            const translations = {
+              bg:{navInvite:'Покана',navShare:'Сподели спомени',navAdmin:'Админ',kicker:'От вас',heroTitle:'Споделени спомени',heroText:'Снимките и видеата, които ни изпратихте, се събират тук като малък албум от нашия ден.',countLabel:'спомена',galleryKicker:'Галерия',galleryTitle:'Нашите гости',galleryText:'Благодарим ви, че споделихте тези красиви моменти с нас.',empty:'Все още няма споделени спомени.'},
+              tr:{navInvite:'Davetiye',navShare:'Anı Paylaş',navAdmin:'Admin',kicker:'Sizden gelenler',heroTitle:'Paylaşılan Anılar',heroText:'Bize gönderdiğiniz fotoğraf ve videolar burada küçük bir anı albümü gibi toplanıyor.',countLabel:'anı',galleryKicker:'Galeri',galleryTitle:'Sizden Gelenler',galleryText:'Bu güzel anları bizimle paylaştığınız için çok teşekkür ederiz.',empty:'Henüz paylaşılan anı yok.'},
+              en:{navInvite:'Invitation',navShare:'Share Memories',navAdmin:'Admin',kicker:'From you',heroTitle:'Shared Memories',heroText:'The photos and videos you sent us gather here as a small album from our day.',countLabel:'memories',galleryKicker:'Gallery',galleryTitle:'From Our Guests',galleryText:'Thank you for sharing these beautiful moments with us.',empty:'No shared memories yet.'}
+            };
+            let currentLang = localStorage.getItem('siteLang') || 'bg';
+            const $ = (selector, root = document) => root.querySelector(selector);
+            const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+            function applyLanguage(lang){
+              currentLang = translations[lang] ? lang : 'bg';
+              localStorage.setItem('siteLang', currentLang);
+              document.documentElement.lang = currentLang;
+              $$('[data-i18n]').forEach(el => {
+                const text = translations[currentLang][el.dataset.i18n];
+                if(text) el.textContent = text;
+              });
+              $$('[data-lang]').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === currentLang));
+            }
+            $$('[data-lang]').forEach(btn => btn.addEventListener('click', () => applyLanguage(btn.dataset.lang)));
+            applyLanguage(currentLang);
+
+            const items = $$('.item');
+            const lightbox = $('#lightbox');
+            const img = $('#lightboxImg');
+            const video = $('#lightboxVideo');
+            let active = 0;
+            function show(index){
+              if(!items.length) return;
+              active = (index + items.length) % items.length;
+              const item = items[active];
+              const isVideo = item.dataset.media === 'video';
+              lightbox.classList.toggle('media-video', isVideo);
+              if(isVideo){
+                img.removeAttribute('src');
+                video.src = item.dataset.src;
+                video.play().catch(() => {});
+              }else{
+                video.pause();
+                video.removeAttribute('src');
+                const itemImg = $('img', item);
+                img.src = itemImg.src;
+                img.alt = itemImg.alt;
+              }
+              lightbox.classList.add('open');
+              lightbox.setAttribute('aria-hidden','false');
+            }
+            function close(){
+              video.pause();
+              video.removeAttribute('src');
+              img.removeAttribute('src');
+              lightbox.classList.remove('open','media-video');
+              lightbox.setAttribute('aria-hidden','true');
+            }
+            items.forEach((item,index) => item.addEventListener('click', () => show(index)));
+            $('#closeLightbox')?.addEventListener('click', close);
+            $('#prevMedia')?.addEventListener('click', () => show(active - 1));
+            $('#nextMedia')?.addEventListener('click', () => show(active + 1));
+            lightbox?.addEventListener('click', event => { if(event.target === lightbox) close(); });
+            addEventListener('keydown', event => {
+              if(!lightbox?.classList.contains('open')) return;
+              if(event.key === 'Escape') close();
+              if(event.key === 'ArrowLeft') show(active - 1);
+              if(event.key === 'ArrowRight') show(active + 1);
+            });
+          </script>
         </body>
         </html>
         """,
