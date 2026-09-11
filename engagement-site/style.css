@@ -1094,6 +1094,12 @@ body.gate-locked {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
 }
+html[lang="bg"] .hero-rsvp-btn {
+  display: none;
+}
+html[lang="bg"] .hero-buttons:has(.hero-rsvp-btn) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 .reminder-btn {
   min-width: 0;
   justify-content: center;
