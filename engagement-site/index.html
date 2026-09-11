@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Serif+Display:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=20260911-02" />
+  <link rel="stylesheet" href="style.css?v=20260911-03" />
 </head>
 <body>
   <canvas id="petalsCanvas" aria-hidden="true"></canvas>
@@ -41,8 +41,14 @@
       <h1>Fikrie <span>&</span> Şafak</h1>
       <p data-i18n="qrText">Можете да отворите поканата или да споделите снимките и видеата си с нас.</p>
       <div class="qr-choice-actions">
-        <button class="btn primary" type="button" id="qrOpenInvite" data-i18n="qrInvite">Към поканата</button>
-        <button class="btn glass" type="button" id="qrShareMemories" data-i18n="qrMemories">Сподели спомени</button>
+        <button class="btn primary qr-action qr-action-primary" type="button" id="qrOpenInvite">
+          <span>✦</span>
+          <strong data-i18n="qrInvite">Към поканата</strong>
+        </button>
+        <button class="btn glass qr-action" type="button" id="qrShareMemories">
+          <span>☁</span>
+          <strong data-i18n="qrMemories">Сподели спомени</strong>
+        </button>
       </div>
       <div class="gate-language lang-switch" aria-label="Language selector">
         <button type="button" data-lang="bg">🇧🇬 BG</button>
@@ -250,6 +256,7 @@
         </section>
 
         <section id="upload" class="card-soft panel-card upload-panel">
+          <button class="memory-back-btn" type="button" id="memoryBackToQr" data-i18n="qrBack">Назад</button>
           <div class="section-title small">
             <p class="eyebrow" data-i18n="uploadKicker">Дигитална кутия за спомени</p>
             <h2 data-i18n="uploadTitle">Да запазим спомените</h2>
@@ -310,6 +317,6 @@
 
   <audio id="siteAudio" src="shandifi.m4a" preload="none" loop playsinline></audio>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="script.js?v=20260911-02"></script>
+  <script src="script.js?v=20260911-03"></script>
 </body>
 </html>

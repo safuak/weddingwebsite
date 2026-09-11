@@ -23,7 +23,7 @@ const translations = {
     startTime:'Започва в 19:00',
     locationKicker:'Къде и кога', locationTitle:'Място на годежа', locationSub:'Ще се радваме да бъдете с нас', directions:'Упътване', programTitle:'Програма', welcome:'Посрещане', ceremony:'Годежна церемония', dinner:'Вечеря', fun:'Забавление',
     rsvpKicker:'Моля, потвърдете', rsvpTitle:'Потвърждение', rsvpSub:'Моля, потвърдете дали ще присъствате', guestCount:'Колко души ще присъстват?', select:'Изберете', coming:'Ще присъствам', notComing:'Няма да присъствам', note:'Бележка', notePh:'Оставете ни кратко послание...', send:'Изпрати',
-    quote:'“Различни езици, различни пътища... Но едно сърце.”', finalTop:'С нетърпение очакваме да споделим този', finalScript:'специален ден с Вас', finalThanks:'Благодарим Ви, че ще бъдете част от нашия годеж и ще споделите нашето щастие.', finalAwait:'Очакваме Ви', rsvpAlert:'Вашето потвърждение е получено. Благодарим ви ❤️', uploadAlert:'Файловете са качени успешно.', uploadDone:'Успешно изпратено', uploadFailed:'Качването не бе успешно.', uploadConnection:'Грешка при връзката за качване.', uploadResponse:'Грешка в отговора при качване.', invalidFile:'Невалиден тип файл.', fileTooLarge:'Файлът е твърде голям.', rsvpError:'Грешка при изпращане.', fileSelected:'избрани', retryUpload:'Качи отново', linkCopied:'Линкът е копиран', calendarDownloaded:'Календарният файл е изтеглен', audioOn:'Спри звука', audioOff:'Пусни звука', audioToggleLabel:'Музика', qrKicker:'Маса за спомени', qrText:'Изберете как искате да продължите.', qrInvite:'Към поканата', qrMemories:'Сподели спомени'
+    quote:'“Различни езици, различни пътища... Но едно сърце.”', finalTop:'С нетърпение очакваме да споделим този', finalScript:'специален ден с Вас', finalThanks:'Благодарим Ви, че ще бъдете част от нашия годеж и ще споделите нашето щастие.', finalAwait:'Очакваме Ви', rsvpAlert:'Вашето потвърждение е получено. Благодарим ви ❤️', uploadAlert:'Файловете са качени успешно.', uploadDone:'Успешно изпратено', uploadFailed:'Качването не бе успешно.', uploadConnection:'Грешка при връзката за качване.', uploadResponse:'Грешка в отговора при качване.', invalidFile:'Невалиден тип файл.', fileTooLarge:'Файлът е твърде голям.', rsvpError:'Грешка при изпращане.', fileSelected:'избрани', retryUpload:'Качи отново', linkCopied:'Линкът е копиран', calendarDownloaded:'Календарният файл е изтеглен', audioOn:'Спри звука', audioOff:'Пусни звука', audioToggleLabel:'Музика', qrKicker:'Маса за спомени', qrText:'Изберете как искате да продължите.', qrInvite:'Към поканата', qrMemories:'Сподели спомени', qrBack:'Назад'
   },
   tr: {
     gateSmall:'Nişan Davetiyesi', gateText:'Bu özel günümüzde sizi de aramızda görmekten mutluluk duyarız.', openInvite:'Devam Et',
@@ -40,7 +40,7 @@ const translations = {
     startTime:'19:00' ,
     locationKicker:'Nerede ve ne zaman', locationTitle:'Nişan Yeri', locationSub:'Sizleri de aramızda görmekten mutluluk duyarız', directions:'Yol Tarifi Al', programTitle:'Tören Programı', welcome:'Karşılama', ceremony:'Nişan Töreni', dinner:'Yemek', fun:'Eğlence',
     rsvpKicker:'Lütfen bildiriniz', rsvpTitle:'Katılım Durumu', rsvpSub:'Lütfen katılım durumunuzu bildirin', guestCount:'Kaç kişi katılacaksınız?', select:'Seçiniz', coming:'Geliyorum', notComing:'Gelemiyorum', note:'Not', notePh:'Bizim için bir not bırakın...', send:'Gönder',
-    quote:'“Farklı diller, farklı yollar... Ama aynı kalp.”', finalTop:'Bu özel günü sizinle paylaşmayı sabırsızlıkla bekliyoruz', finalScript:'en mutlu günümüzde', finalThanks:'Nişanımızın bir parçası olup mutluluğumuzu paylaşacağınız için teşekkür ederiz.', finalAwait:'Sizi bekliyoruz', rsvpAlert:'Katılım bilginiz alındı. Teşekkür ederiz ❤️', uploadAlert:'Dosyalar başarıyla yüklendi.', uploadDone:'Başarıyla gönderildi', uploadFailed:'Yükleme başarısız oldu.', uploadConnection:'Yükleme bağlantı hatası.', uploadResponse:'Yükleme yanıtı okunamadı.', invalidFile:'Geçersiz dosya türü.', fileTooLarge:'Dosya çok büyük.', rsvpError:'Gönderim hatası.', fileSelected:'dosya seçildi', retryUpload:'Yeniden yükle', linkCopied:'Link kopyalandı', calendarDownloaded:'Takvim dosyası indirildi', audioOn:'Sesi kapat', audioOff:'Sesi aç', audioToggleLabel:'Müzik', qrKicker:'Anı Masası', qrText:'Nasıl devam etmek istersiniz?', qrInvite:'Davetiyeye Git', qrMemories:'Anıları Paylaş'
+    quote:'“Farklı diller, farklı yollar... Ama aynı kalp.”', finalTop:'Bu özel günü sizinle paylaşmayı sabırsızlıkla bekliyoruz', finalScript:'en mutlu günümüzde', finalThanks:'Nişanımızın bir parçası olup mutluluğumuzu paylaşacağınız için teşekkür ederiz.', finalAwait:'Sizi bekliyoruz', rsvpAlert:'Katılım bilginiz alındı. Teşekkür ederiz ❤️', uploadAlert:'Dosyalar başarıyla yüklendi.', uploadDone:'Başarıyla gönderildi', uploadFailed:'Yükleme başarısız oldu.', uploadConnection:'Yükleme bağlantı hatası.', uploadResponse:'Yükleme yanıtı okunamadı.', invalidFile:'Geçersiz dosya türü.', fileTooLarge:'Dosya çok büyük.', rsvpError:'Gönderim hatası.', fileSelected:'dosya seçildi', retryUpload:'Yeniden yükle', linkCopied:'Link kopyalandı', calendarDownloaded:'Takvim dosyası indirildi', audioOn:'Sesi kapat', audioOff:'Sesi aç', audioToggleLabel:'Müzik', qrKicker:'Anı Masası', qrText:'Nasıl devam etmek istersiniz?', qrInvite:'Davetiyeye Git', qrMemories:'Anıları Paylaş', qrBack:'Geri'
   },
   en: {
     gateSmall:'Engagement Invitation', gateText:'We would be happy to have you with us on this special day.', openInvite:'Continue',
@@ -57,7 +57,7 @@ const translations = {
     startTime:'Starts at 19:00',
     locationKicker:'Where and when', locationTitle:'Engagement Location', locationSub:'We would be happy to see you with us', directions:'Get Directions', programTitle:'Ceremony Program', welcome:'Welcome', ceremony:'Engagement Ceremony', dinner:'Dinner', fun:'Celebration',
     rsvpKicker:'Please confirm', rsvpTitle:'RSVP', rsvpSub:'Please let us know if you will attend', guestCount:'How many guests?', select:'Select', coming:'I am coming', notComing:'I cannot come', note:'Note', notePh:'Leave us a short message...', send:'Send',
-    quote:'“Different languages, different roads... But the same heart.”', finalTop:'We cannot wait to share this', finalScript:'special day with you', finalThanks:'Thank you for being part of our engagement and sharing our happiness.', finalAwait:'We are waiting for you', rsvpAlert:'Your RSVP has been received. Thank you ❤️', uploadAlert:'Files uploaded successfully.', uploadDone:'Uploaded successfully', uploadFailed:'Upload failed.', uploadConnection:'Upload connection error.', uploadResponse:'Upload response error.', invalidFile:'Invalid file type.', fileTooLarge:'File is too large.', rsvpError:'Submission error.', fileSelected:'files selected', retryUpload:'Upload again', linkCopied:'Link copied', calendarDownloaded:'Calendar file downloaded', audioOn:'Mute', audioOff:'Play sound', audioToggleLabel:'Music', qrKicker:'Memory Table', qrText:'Choose how you would like to continue.', qrInvite:'Go to Invitation', qrMemories:'Share Memories'
+    quote:'“Different languages, different roads... But the same heart.”', finalTop:'We cannot wait to share this', finalScript:'special day with you', finalThanks:'Thank you for being part of our engagement and sharing our happiness.', finalAwait:'We are waiting for you', rsvpAlert:'Your RSVP has been received. Thank you ❤️', uploadAlert:'Files uploaded successfully.', uploadDone:'Uploaded successfully', uploadFailed:'Upload failed.', uploadConnection:'Upload connection error.', uploadResponse:'Upload response error.', invalidFile:'Invalid file type.', fileTooLarge:'File is too large.', rsvpError:'Submission error.', fileSelected:'files selected', retryUpload:'Upload again', linkCopied:'Link copied', calendarDownloaded:'Calendar file downloaded', audioOn:'Mute', audioOff:'Play sound', audioToggleLabel:'Music', qrKicker:'Memory Table', qrText:'Choose how you would like to continue.', qrInvite:'Go to Invitation', qrMemories:'Share Memories', qrBack:'Back'
   }
 };
 
@@ -183,6 +183,16 @@ function showMemoryOnlyMode(){
   closeMenu();
   setCleanUrl('?share=memories');
   setTimeout(() => $('#upload')?.scrollIntoView({behavior:'auto', block:'center'}), 0);
+}
+
+function showQrChoiceFromMemory(){
+  document.body.classList.remove('memory-only');
+  document.documentElement.classList.remove('gate-locked');
+  document.body.classList.remove('gate-locked');
+  $('#inviteGate')?.classList.add('hide');
+  closeMenu();
+  setCleanUrl('?qr=1');
+  showQrChoice();
 }
 
 function initEntryMode(){
@@ -716,6 +726,7 @@ function bindBaseEvents(){
   }));
   $('#qrOpenInvite')?.addEventListener('click', showInvitationMode);
   $('#qrShareMemories')?.addEventListener('click', showMemoryOnlyMode);
+  $('#memoryBackToQr')?.addEventListener('click', showQrChoiceFromMemory);
 }
 
 bindBaseEvents();
