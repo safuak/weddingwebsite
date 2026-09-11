@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Serif+Display:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=20260911-01" />
+  <link rel="stylesheet" href="style.css?v=20260911-02" />
 </head>
 <body>
   <canvas id="petalsCanvas" aria-hidden="true"></canvas>
@@ -80,7 +80,7 @@
       <a href="#story" data-i18n="navStory">История</a>
       <a href="#gallery" data-i18n="navGallery">Галерия</a>
       <a href="#upload" data-i18n="navUpload">Спомени</a>
-      <a href="#rsvp" data-i18n="navRsvp">Потвърдете</a>
+      <a href="#rsvp" class="rsvp-nav-link" data-i18n="navRsvp">Потвърдете</a>
     </nav>
     <div class="top-actions">
       <div class="lang-switch" aria-label="Language selector">
@@ -104,7 +104,7 @@
       <a href="#gallery" data-i18n="navGallery">Галерия</a>
       <a href="#upload" data-i18n="navUpload">Спомени</a>
       <a href="#location" data-i18n="navLocation">Място</a>
-      <a href="#rsvp" data-i18n="navRsvp">Потвърдете</a>
+      <a href="#rsvp" class="rsvp-nav-link" data-i18n="navRsvp">Потвърдете</a>
       <div class="menu-langs">
         <button type="button" data-lang="bg">🇧🇬 BG</button>
         <button type="button" data-lang="tr">🇹🇷 TR</button>
@@ -235,7 +235,7 @@
 
     <section class="section rsvp-upload reveal">
       <div class="split-grid">
-        <section id="rsvp" class="card-soft panel-card">
+        <section id="rsvp" class="card-soft panel-card rsvp-panel">
           <div class="section-title small">
             <p class="eyebrow" data-i18n="rsvpKicker">Моля, потвърдете</p>
             <h2 data-i18n="rsvpTitle">Потвърждение</h2>
@@ -297,7 +297,7 @@
     <a href="#story"><span>♡</span><small data-i18n="navStoryShort">История</small></a>
     <a href="#gallery"><span>□</span><small data-i18n="navGalleryShort">Галерия</small></a>
     <a href="#upload"><span>☁</span><small data-i18n="navUploadShort">Спомени</small></a>
-    <a href="#rsvp"><span>✉</span><small data-i18n="navRsvpShort">RSVP</small></a>
+    <a href="#rsvp" class="rsvp-nav-link"><span>✉</span><small data-i18n="navRsvpShort">RSVP</small></a>
   </nav>
 
   <div class="lightbox" id="lightbox" aria-hidden="true">
@@ -310,6 +310,6 @@
 
   <audio id="siteAudio" src="shandifi.m4a" preload="none" loop playsinline></audio>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="script.js?v=20260911-01"></script>
+  <script src="script.js?v=20260911-02"></script>
 </body>
 </html>
