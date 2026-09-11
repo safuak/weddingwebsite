@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Serif+Display:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=20260911-03" />
+  <link rel="stylesheet" href="style.css?v=20260911-04" />
 </head>
 <body>
   <canvas id="petalsCanvas" aria-hidden="true"></canvas>
@@ -264,6 +264,7 @@
           <p class="upload-note-text" data-i18n="uploadText">Изпратете вашите снимки и видеа. Нека спомените ни растат заедно с вас. Всеки кадър е много ценен за нас.</p>
           <form id="memoryUploadForm" class="upload-form" method="post" action="/api/memories/upload" enctype="multipart/form-data">
             <label><span data-i18n="fullName">Име и фамилия</span><input type="text" name="guestName" required data-placeholder="namePh" placeholder="Напишете името си"></label>
+            <label><span data-i18n="shortNote">Кратка бележка</span><textarea name="memoryNote" data-placeholder="memoryNotePh" placeholder="Оставете кратка бележка..."></textarea></label>
             <label class="file-drop" for="memoryFiles" id="dropZone">
               <input id="memoryFiles" name="memories" type="file" accept="image/*,video/*,.heic,.heif,.webm" multiple required>
               <span class="file-drop-title" data-i18n="chooseFiles">Изберете файлове</span>
@@ -317,6 +318,6 @@
 
   <audio id="siteAudio" src="shandifi.m4a" preload="none" loop playsinline></audio>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="script.js?v=20260911-03"></script>
+  <script src="script.js?v=20260911-04"></script>
 </body>
 </html>

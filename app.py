@@ -21,6 +21,7 @@ UPLOAD_DIR = BASE_DIR / "uploads"
 UPLOAD_DIR.mkdir(exist_ok=True)
 RSVP_TEXT_FILE = UPLOAD_DIR / "rsvp_submissions.txt"
 RSVP_JSONL_FILE = UPLOAD_DIR / "rsvp_submissions.jsonl"
+MEMORY_NOTES_FILENAME = "_notes.jsonl"
 TMP_DOWNLOAD_DIR = BASE_DIR / "tmp" / "downloads"
 TMP_DOWNLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -332,7 +333,7 @@ def memory_file_type(path: Path) -> str:
 
 
 def load_memory_uploads() -> dict:
-    ignored_files = {RSVP_TEXT_FILE.name, RSVP_JSONL_FILE.name}
+    ignored_files = {RSVP_TEXT_FILE.name, RSVP_JSONL_FILE.name, MEMORY_NOTES_FILENAME}
     grouped = {}
     total_files = 0
     total_size = 0
@@ -348,7 +349,14 @@ def load_memory_uploads() -> dict:
         total_size += stat.st_size
         group = grouped.setdefault(
             guest,
-            {"guest": guest, "files": [], "file_count": 0, "total_size": 0, "updated_at": ""},
+            {
+                "guest": guest,
+                "files": [],
+                "file_count": 0,
+                "total_size": 0,
+                "updated_at": "",
+                "notes": [],
+            },
         )
         group["file_count"] += 1
         group["total_size"] += stat.st_size
@@ -368,6 +376,22 @@ def load_memory_uploads() -> dict:
     groups = sorted(grouped.values(), key=lambda item: item["updated_at"], reverse=True)
     for group in groups:
         group["total_size_label"] = format_bytes(group["total_size"])
+        notes_file = UPLOAD_DIR / group["guest"] / MEMORY_NOTES_FILENAME
+        if notes_file.is_file():
+            for line in notes_file.read_text(encoding="utf-8").splitlines():
+                try:
+                    note = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                text = str(note.get("note", "")).strip()
+                if text:
+                    group["notes"].append(
+                        {
+                            "note": text,
+                            "guest_name": str(note.get("guest_name", "")).strip(),
+                            "received_at": str(note.get("received_at", "")).strip(),
+                        }
+                    )
 
     return {
         "groups": groups,
@@ -412,6 +436,31 @@ def cleanup_empty_upload_parent(path: Path) -> None:
             parent.rmdir()
     except OSError:
         pass
+
+
+def append_memory_note(guest_dir: Path, guest_name: str, note: str) -> None:
+    clean_note = " ".join(note.strip().split())
+    if not clean_note:
+        return
+    clean_note = clean_note[:1200]
+    notes_file = guest_dir / MEMORY_NOTES_FILENAME
+    note_hash = hashlib.sha256(f"{guest_name}\n{clean_note}".encode("utf-8")).hexdigest()
+    if notes_file.is_file():
+        for line in notes_file.read_text(encoding="utf-8").splitlines():
+            try:
+                existing = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            if existing.get("hash") == note_hash:
+                return
+    payload = {
+        "guest_name": guest_name,
+        "note": clean_note,
+        "received_at": datetime.utcnow().isoformat() + "Z",
+        "hash": note_hash,
+    }
+    with notes_file.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(payload, ensure_ascii=False) + "\n")
 
 
 @app.route("/")
@@ -550,6 +599,10 @@ def admin_dashboard():
             .group-select .checkmark{width:18px;height:18px;border:2px solid var(--gold);border-radius:5px;background:#fff;display:grid;place-items:center;color:#fff;font-size:12px;line-height:1}
             .group-select.active .checkmark{background:var(--gold)}
             .group-select.partial .checkmark{background:#fff7ea;color:var(--gold)}
+            .memory-notes{margin:0 0 12px;border:1px solid #ead8bc;border-radius:12px;background:#fff;padding:12px}
+            .memory-notes strong{display:block;margin-bottom:8px;color:#7d581c}
+            .memory-notes p{margin:8px 0 0;white-space:pre-wrap;line-height:1.5;color:var(--ink)}
+            .memory-notes small{display:block;margin-top:5px;color:var(--muted);font-size:11px}
             .file-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:10px}
             .file-card{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
             .file-check{display:flex;gap:7px;align-items:center;padding:8px 10px;border-bottom:1px solid var(--line);font-weight:900;color:var(--muted);font-size:13px}
@@ -632,6 +685,14 @@ def admin_dashboard():
                     <p>{{ group.updated_at }}</p>
                   </div>
                 </div>
+                {% if group.notes %}
+                <div class="memory-notes">
+                  <strong>Notlar</strong>
+                  {% for note in group.notes %}
+                  <p>{{ note.note }}<small>{{ note.received_at }}</small></p>
+                  {% endfor %}
+                </div>
+                {% endif %}
                 <div class="file-grid">
                   {% for file in group.files %}
                   <div class="file-card">
@@ -887,10 +948,14 @@ def upload_memories():
         if not filename or not allowed_file(filename):
             return jsonify({"success": False, "error": "Invalid file type."}), 400
 
-    guest_name = request.form.get("guestName", "").strip() or "guest"
+    guest_name = request.form.get("guestName", "").strip()
+    if not guest_name:
+        return jsonify({"success": False, "error": "Name is required."}), 400
+    memory_note = request.form.get("memoryNote", "").strip()
     safe_folder = safe_guest_folder(guest_name)
     guest_dir = UPLOAD_DIR / safe_folder
     guest_dir.mkdir(parents=True, exist_ok=True)
+    append_memory_note(guest_dir, guest_name, memory_note)
 
     saved_files = []
     for index, file in enumerate(files, start=1):

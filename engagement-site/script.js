@@ -476,6 +476,7 @@ function initUpload(){
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
+    if(!form.reportValidity()) return;
     list.innerHTML = '';
     thanks?.classList.remove('show');
     const files = [...input.files];
@@ -491,12 +492,15 @@ function initUpload(){
 
     if(REAL_UPLOAD_ENABLED){
       const failedFiles = [];
-      const guestName = new FormData(form).get('guestName') || 'guest';
+      const formData = new FormData(form);
+      const guestName = formData.get('guestName') || '';
+      const memoryNote = String(formData.get('memoryNote') || '').trim();
 
       for(const [index, file] of files.entries()){
         const {progress, small} = rows[index];
         const data = new FormData();
         data.append('guestName', guestName);
+        if(index === 0 && memoryNote) data.append('memoryNote', memoryNote);
         data.append('memories', file);
 
         try{
